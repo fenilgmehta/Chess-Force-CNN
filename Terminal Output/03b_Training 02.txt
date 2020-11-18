@@ -1,0 +1,203 @@
+(fm) ➜  code git:(main) ✗ DATA_PATH="."   # EDIT this so that it points to the directory used for storing all the PGN/CSV/PKL data files used for training/testing/playing          
+
+PKL_PATH="${DATA_PATH}/04_pkl_data"
+PKL_PATH_TRAINED="${DATA_PATH}/04_pkl_data_trained"
+
+SAVED_WEIGHTS_FILE="../../Chess-Force-Models/ffnn_keras-mg005-be00778-sn003-ep00005-weights-v031.h5"
+MODEL_NAME_PREFIX="cnn"
+EPOCHS=8
+WEIGHTS_SAVE_PATH="../../Chess-Force-Models"
+
+python step_03b_train.py train                          \
+    --gpu=-1                                            \
+    --builder_model=6                                   \
+    --board_encoder=01588                               \
+    --version_number=0                                  \
+    --epochs=${EPOCHS}                                  \
+    --batch_size=8192                                   \
+    --validation_split=0.2                              \
+    --input_dir="${PKL_PATH}"                           \
+    --move_dir="${PKL_PATH_TRAINED}"                    \
+    --file_suffix="pkl"                                 \
+    --y_normalizer=5                                    \
+    --callback                                          \
+    --name_prefix="${MODEL_NAME_PREFIX}"                \
+    --saved_weights_file="${SAVED_WEIGHTS_FILE}"        \
+    --weights_save_path="${WEIGHTS_SAVE_PATH}"          \
+    && mv "${PKL_PATH_TRAINED}/"*.pkl "${PKL_PATH}"
+
+
+
+{'--auto_load_new': False,
+ '--batch_size': '8192',
+ '--board_encoder': '01588',
+ '--builder_model': '6',
+ '--callback': True,
+ '--epochs': '8',
+ '--file_suffix': 'pkl',
+ '--generate_model_image': False,
+ '--gpu': '-1',
+ '--help': False,
+ '--input_dir': './04_pkl_data',
+ '--move_dir': './04_pkl_data_trained',
+ '--name_prefix': 'cnn',
+ '--saved_weights_file': '../../Chess-Force-Models/ffnn_keras-mg005-be00778-sn003-ep00005-weights-v031.h5',
+ '--validation_split': '0.2',
+ '--version': False,
+ '--version_number': '0',
+ '--weights_save_path': '../../Chess-Force-Models',
+ '--y_normalizer': '5',
+ 'get_available_gpus': False,
+ 'train': True}
+
+
+
+  0%|                                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s]Input files = 1
+Processed files = 0
+File: complete_kingbase_dataset.pkl:   0%|                                                                                                                                                                              | 0/1 [00:00<?, ?it/s]Epoch 1/8
+
+Epoch 00001: val_loss improved from inf to 0.51849, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00001-vl0.51849.h5
+2738/2738 - 214s - loss: 0.5304 - accuracy: 0.7285 - val_loss: 0.5185 - val_accuracy: 0.7391
+Epoch 2/8
+
+Epoch 00002: val_loss improved from 0.51849 to 0.50039, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00002-vl0.50039.h5
+2738/2738 - 160s - loss: 0.4939 - accuracy: 0.7554 - val_loss: 0.5004 - val_accuracy: 0.7509
+Epoch 3/8
+
+Epoch 00003: val_loss improved from 0.50039 to 0.49404, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00003-vl0.49404.h5
+2738/2738 - 160s - loss: 0.4762 - accuracy: 0.7668 - val_loss: 0.4940 - val_accuracy: 0.7551
+Epoch 4/8
+
+Epoch 00004: val_loss improved from 0.49404 to 0.48949, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00004-vl0.48949.h5
+2738/2738 - 161s - loss: 0.4639 - accuracy: 0.7745 - val_loss: 0.4895 - val_accuracy: 0.7580
+Epoch 5/8
+
+Epoch 00005: val_loss improved from 0.48949 to 0.48582, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00005-vl0.48582.h5
+2738/2738 - 160s - loss: 0.4538 - accuracy: 0.7807 - val_loss: 0.4858 - val_accuracy: 0.7616
+Epoch 6/8
+
+Epoch 00006: val_loss improved from 0.48582 to 0.48565, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00006-vl0.48565.h5
+2738/2738 - 160s - loss: 0.4454 - accuracy: 0.7860 - val_loss: 0.4856 - val_accuracy: 0.7615
+Epoch 7/8
+
+Epoch 00007: val_loss improved from 0.48565 to 0.48552, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00007-vl0.48552.h5
+2738/2738 - 160s - loss: 0.4394 - accuracy: 0.7897 - val_loss: 0.4855 - val_accuracy: 0.7627
+Epoch 8/8
+
+Epoch 00008: val_loss improved from 0.48552 to 0.48528, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001_ep00008-vl0.48528.h5
+2738/2738 - 160s - loss: 0.4378 - accuracy: 0.7908 - val_loss: 0.4853 - val_accuracy: 0.7635
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg006-be01588-sn000-ep00016-weight-v001.h5
+File: complete_kingbase_dataset.pkl: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [23:39<00:00, 1419.25s/it]
+
+
+Model training finished :)
+
+
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg006-be01588-sn000-ep00016-weight-v001.h5
+(fm) ➜  code git:(main) ✗                                                          
+(fm) ➜  code git:(main) ✗ DATA_PATH="."   # EDIT this so that it points to the directory used for storing all the PGN/CSV/PKL data files used for training/testing/playing
+
+PKL_PATH="${DATA_PATH}/04_pkl_data"
+PKL_PATH_TRAINED="${DATA_PATH}/04_pkl_data_trained"
+
+SAVED_WEIGHTS_FILE="../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001.h5"
+MODEL_NAME_PREFIX="cnn"
+EPOCHS=8
+WEIGHTS_SAVE_PATH="../../Chess-Force-Models"
+
+python step_03b_train.py train                          \
+    --gpu=-1                                            \
+    --builder_model=6                                   \
+    --board_encoder=01588                               \
+    --version_number=0                                  \
+    --epochs=${EPOCHS}                                  \
+    --batch_size=8192                                   \
+    --validation_split=0.2                              \
+    --input_dir="${PKL_PATH}"                           \
+    --move_dir="${PKL_PATH_TRAINED}"                    \
+    --file_suffix="pkl"                                 \
+    --y_normalizer=5                                    \
+    --callback                                          \
+    --name_prefix="${MODEL_NAME_PREFIX}"                \
+    --saved_weights_file="${SAVED_WEIGHTS_FILE}"        \
+    --auto_load_new                                     \
+    --weights_save_path="${WEIGHTS_SAVE_PATH}"          \
+    && mv "${PKL_PATH_TRAINED}/"*.pkl "${PKL_PATH}"
+
+
+
+{'--auto_load_new': True,
+ '--batch_size': '8192',
+ '--board_encoder': '01588',
+ '--builder_model': '6',
+ '--callback': True,
+ '--epochs': '8',
+ '--file_suffix': 'pkl',
+ '--generate_model_image': False,
+ '--gpu': '-1',
+ '--help': False,
+ '--input_dir': './04_pkl_data',
+ '--move_dir': './04_pkl_data_trained',
+ '--name_prefix': 'cnn',
+ '--saved_weights_file': '../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001.h5',
+ '--validation_split': '0.2',
+ '--version': False,
+ '--version_number': '0',
+ '--weights_save_path': '../../Chess-Force-Models',
+ '--y_normalizer': '5',
+ 'get_available_gpus': False,
+ 'train': True}
+
+
+INFO: auto_load_new: Trying
+INFO: auto_load_new: loading: '../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00016-weight-v001.h5'
+Model weights successfully loaded: cnn-mg006-be01588-sn000-ep00016-weight-v001.h5
+INFO: auto_load_new: Model loaded :)
+
+  0%|                                                                                                                                                                                                                   | 0/1 [00:00<?, ?it/s]Input files = 1
+Processed files = 0
+File: complete_kingbase_dataset.pkl:   0%|                                                                                                                                                                              | 0/1 [00:00<?, ?it/s]Epoch 1/8
+
+Epoch 00001: val_loss improved from inf to 0.48652, saving model to ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001_ep00001-vl0.48652.h5
+2738/2738 - 213s - loss: 0.4304 - accuracy: 0.7954 - val_loss: 0.4865 - val_accuracy: 0.7619
+Epoch 2/8
+
+Epoch 00002: val_loss did not improve from 0.48652
+2738/2738 - 160s - loss: 0.4339 - accuracy: 0.7936 - val_loss: 0.4879 - val_accuracy: 0.7618
+Epoch 3/8
+
+Epoch 00003: val_loss did not improve from 0.48652
+2738/2738 - 161s - loss: 0.4259 - accuracy: 0.7980 - val_loss: 0.4883 - val_accuracy: 0.7624
+Epoch 4/8
+
+Epoch 00004: val_loss did not improve from 0.48652
+2738/2738 - 161s - loss: 0.4235 - accuracy: 0.7996 - val_loss: 0.4903 - val_accuracy: 0.7605
+Epoch 5/8
+
+Epoch 00005: val_loss did not improve from 0.48652
+2738/2738 - 161s - loss: 0.4186 - accuracy: 0.8024 - val_loss: 0.4888 - val_accuracy: 0.7629
+Epoch 6/8
+
+Epoch 00006: val_loss did not improve from 0.48652
+2738/2738 - 160s - loss: 0.4173 - accuracy: 0.8032 - val_loss: 0.4905 - val_accuracy: 0.7634
+Epoch 7/8
+
+Epoch 00007: val_loss did not improve from 0.48652
+2738/2738 - 161s - loss: 0.4138 - accuracy: 0.8053 - val_loss: 0.4914 - val_accuracy: 0.7631
+Epoch 8/8
+
+Epoch 00008: val_loss did not improve from 0.48652
+2738/2738 - 160s - loss: 0.4117 - accuracy: 0.8065 - val_loss: 0.4909 - val_accuracy: 0.7630
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg006-be01588-sn000-ep00024-weight-v001.h5
+File: complete_kingbase_dataset.pkl: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [23:41<00:00, 1421.75s/it]
+
+
+Model training finished :)
+
+
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg006-be01588-sn000-ep00024-weight-v001.h5
+(fm) ➜  code git:(main) ✗ 

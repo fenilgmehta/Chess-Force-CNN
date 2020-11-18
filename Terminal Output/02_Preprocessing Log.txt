@@ -1,0 +1,55 @@
+(fm) ➜  code git:(main) ✗ python step_02_preprocess.py convert_fen_to_pkl_folder --input_dir='../../03_csv_score_data' --output_dir='../../04_pkl_score_data' --move_dir='../../03_csv_score_data_done' --board_encoder='Encode_5_8_8' --score_normalizer='normalize_004' --suffix_to_append='-be01588-sn004.pkl' 
+{'--board_encoder': 'Encode_5_8_8',
+ '--file_path': None,
+ '--help': False,
+ '--input_dir': '../../03_csv_score_data',
+ '--move_dir': '../../03_csv_score_data_done',
+ '--output_dir': '../../04_pkl_score_data',
+ '--parameter': None,
+ '--score_normalizer': 'normalize_004',
+ '--suffix_to_append': '-be01588-sn004.pkl',
+ '--version': False,
+ 'BoardEncoder': False,
+ 'ScoreNormalizer': False,
+ 'convert_fen_to_pkl_file': False,
+ 'convert_fen_to_pkl_folder': True,
+ 'get_options': False}
+
+----------------------------------------
+
+File: kaufman_game.csv:       0%|                                         |  0/33 [00:00<?    ,     ?it/s][ExecutionTime] "(block)" = 00:00:00.4
+File: z__r_A00-A39__aa.csv:   3%|█▎                                       |  1/33 [00:00<00:11,  2.68it/s][ExecutionTime] "(block)" = 00:00:22.1
+File: z__r_A00-A39__ab.csv:   6%|██▌                                      |  2/33 [00:24<03:55,  7.61s/it][ExecutionTime] "(block)" = 00:00:21.4
+File: z__r_A00-A39__ac.csv:   9%|███▊                                     |  3/33 [00:48<06:14, 12.47s/it][ExecutionTime] "(block)" = 00:00:21.4
+File: z__r_A00-A39__ad.csv:  12%|█████                                    |  4/33 [01:12<07:40, 15.87s/it][ExecutionTime] "(block)" = 00:00:21.7
+File: z__r_A00-A39__ae.csv:  15%|██████▎                                  |  5/33 [01:36<08:32, 18.29s/it][ExecutionTime] "(block)" = 00:00:14.9
+File: z__r_A40-A79__aa.csv:  18%|███████▋                                 |  6/33 [01:52<07:58, 17.73s/it][ExecutionTime] "(block)" = 00:00:21.9
+File: z__r_A40-A79__ab.csv:  21%|████████▉                                |  7/33 [02:17<08:31, 19.69s/it][ExecutionTime] "(block)" = 00:00:21.8
+File: z__r_A40-A79__ac.csv:  24%|██████████▏                              |  8/33 [02:41<08:46, 21.06s/it][ExecutionTime] "(block)" = 00:00:17.4
+File: z__r_A80-A99__aa.csv:  27%|███████████▍                             |  9/33 [03:00<08:12, 20.51s/it][ExecutionTime] "(block)" = 00:00:11.1
+File: z__r_B00-B19__aa.csv:  30%|████████████▍                            | 10/33 [03:12<06:54, 18.04s/it][ExecutionTime] "(block)" = 00:00:21.8
+File: z__r_B00-B19__ab.csv:  33%|█████████████▋                           | 11/33 [03:36<07:16, 19.84s/it][ExecutionTime] "(block)" = 00:00:22.6
+File: z__r_B00-B19__ac.csv:  36%|██████████████▉                          | 12/33 [04:01<07:29, 21.39s/it][ExecutionTime] "(block)" = 00:00:20.7
+File: z__r_B20-B49__aa.csv:  39%|████████████████▏                        | 13/33 [04:25<07:18, 21.93s/it][ExecutionTime] "(block)" = 00:00:22.1
+File: z__r_B20-B49__ab.csv:  42%|█████████████████▍                       | 14/33 [04:49<07:11, 22.71s/it][ExecutionTime] "(block)" = 00:00:22.1
+File: z__r_B20-B49__ac.csv:  45%|██████████████████▋                      | 15/33 [05:14<06:58, 23.25s/it][ExecutionTime] "(block)" = 00:00:21.2
+File: z__r_B20-B49__ad.csv:  48%|███████████████████▉                     | 16/33 [05:37<06:37, 23.35s/it][ExecutionTime] "(block)" = 00:00:07.9
+File: z__r_B50-B99__aa.csv:  52%|█████████████████████                    | 17/33 [05:46<05:03, 18.98s/it][ExecutionTime] "(block)" = 00:00:21.3
+File: z__r_B50-B99__ab.csv:  55%|██████████████████████▎                  | 18/33 [06:09<05:04, 20.33s/it][ExecutionTime] "(block)" = 00:00:22.4
+File: z__r_B50-B99__ac.csv:  58%|███████████████████████▌                 | 19/33 [06:34<05:04, 21.74s/it][ExecutionTime] "(block)" = 00:00:01.1
+File: z__r_C00-C99__aa.csv:  61%|████████████████████████▊                | 20/33 [06:36<03:22, 15.56s/it][ExecutionTime] "(block)" = 00:00:21.5
+File: z__r_C00-C99__ab.csv:  64%|██████████████████████████               | 21/33 [07:00<03:36, 18.06s/it][ExecutionTime] "(block)" = 00:00:22.5
+File: z__r_C00-C99__ac.csv:  67%|███████████████████████████▎             | 22/33 [07:24<03:40, 20.09s/it][ExecutionTime] "(block)" = 00:00:21.4
+File: z__r_C00-C99__ad.csv:  70%|████████████████████████████▌            | 23/33 [07:48<03:32, 21.21s/it][ExecutionTime] "(block)" = 00:00:21.7
+File: z__r_C00-C99__ae.csv:  73%|█████████████████████████████▊           | 24/33 [08:12<03:18, 22.06s/it][ExecutionTime] "(block)" = 00:00:16.8
+File: z__r_D00-D99__aa.csv:  76%|███████████████████████████████          | 25/33 [08:31<02:48, 21.00s/it][ExecutionTime] "(block)" = 00:00:21.4
+File: z__r_D00-D99__ab.csv:  79%|████████████████████████████████▎        | 26/33 [08:55<02:32, 21.85s/it][ExecutionTime] "(block)" = 00:00:21.3
+File: z__r_D00-D99__ac.csv:  82%|█████████████████████████████████▌       | 27/33 [09:18<02:14, 22.41s/it][ExecutionTime] "(block)" = 00:00:21.0
+File: z__r_D00-D99__ad.csv:  85%|██████████████████████████████████▊      | 28/33 [09:42<01:53, 22.69s/it][ExecutionTime] "(block)" = 00:00:20.8
+File: z__r_D00-D99__ae.csv:  88%|████████████████████████████████████     | 29/33 [10:05<01:31, 22.78s/it][ExecutionTime] "(block)" = 00:00:20.6
+File: z__r_D00-D99__af.csv:  91%|█████████████████████████████████████▎   | 30/33 [10:28<01:08, 22.82s/it][ExecutionTime] "(block)" = 00:00:05.1
+File: z__r_E00-E99__aa.csv:  94%|██████████████████████████████████████▌  | 31/33 [10:33<00:35, 17.67s/it][ExecutionTime] "(block)" = 00:00:21.3
+File: z__r_E00-E99__ab.csv:  97%|███████████████████████████████████████▊ | 32/33 [10:57<00:19, 19.48s/it][ExecutionTime] "(block)" = 00:00:14.3
+File: z__r_E00-E99__ab.csv: 100%|█████████████████████████████████████████| 33/33 [11:13<00:00, 20.41s/it]
+(fm) ➜  code git:(main) ✗ 
+

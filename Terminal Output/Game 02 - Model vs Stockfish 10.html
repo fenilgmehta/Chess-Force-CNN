@@ -1,0 +1,977 @@
+<pre>(chessCNN) <font color="#8AE234"><b>➜  </b></font><font color="#34E2E2"><b>code</b></font> <font color="#729FCF"><b>git:(</b></font><font color="#EF2929"><b>main</b></font><font color="#729FCF"><b>) </b></font><font color="#FCE94F"><b>✗</b></font> <font color="#4E9A06">python</font> <u style="text-decoration-style:single">step_04_play.py</u> play --game_type=me --model_weights_file=<font color="#C4A000">&apos;../../Chess-Force-CNN-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5&apos;</font> --analyze_game --delay=0
+
+
+
+{&apos;--analyze_game&apos;: True,
+ &apos;--clear_screen&apos;: False,
+ &apos;--delay&apos;: &apos;0&apos;,
+ &apos;--game_type&apos;: &apos;me&apos;,
+ &apos;--help&apos;: False,
+ &apos;--input_dir&apos;: None,
+ &apos;--model_weights_file&apos;: &apos;../../Chess-Force-CNN-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5&apos;,
+ &apos;--move_dir&apos;: None,
+ &apos;--moves&apos;: None,
+ &apos;--output_dir&apos;: None,
+ &apos;--player1_name&apos;: &apos;Player1&apos;,
+ &apos;--player2_name&apos;: &apos;Player2&apos;,
+ &apos;--version&apos;: False,
+ &apos;iterate_moves&apos;: False,
+ &apos;play&apos;: True,
+ &apos;predict_move&apos;: False}
+
+
+Model weights successfully loaded: ../../Chess-Force-CNN-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5
+
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 1, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> <font color="#06989A">♕</font> <font color="#06989A">♔</font> <font color="#06989A">♗</font> <font color="#06989A">♘</font> <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font>. . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+DEBUG: Legal moves = [&apos;g1h3&apos;, &apos;g1f3&apos;, &apos;b1c3&apos;, &apos;b1a3&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;e2e3&apos;, &apos;d2d3&apos;, &apos;c2c3&apos;, &apos;b2b3&apos;, &apos;a2a3&apos;, &apos;h2h4&apos;, &apos;g2g4&apos;, &apos;f2f4&apos;, &apos;e2e4&apos;, &apos;d2d4&apos;, &apos;c2c4&apos;, &apos;b2b4&apos;, &apos;a2a4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:04.0
+DEBUG: [Player1] AI&apos;s move = e2e4
+DEBUG: [Player1] AI&apos;s move_score = [0.559436]
+
+Game analysis[from white&apos;s perspective] = 0.0074
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 1, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> <font color="#06989A">♕</font> <font color="#06989A">♔</font> <font color="#06989A">♗</font> <font color="#06989A">♘</font> <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font>. . . . . . . .
+<font color="#3465A4">[4] </font>. . . . <font color="#D3D7CF">♟</font> . . .
+<font color="#3465A4">[3] </font>. . . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1
+DEBUG: Legal moves = [&apos;g8h6&apos;, &apos;g8f6&apos;, &apos;b8c6&apos;, &apos;b8a6&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;e7e6&apos;, &apos;d7d6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;f7f5&apos;, &apos;e7e5&apos;, &apos;d7d5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = d7d5
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.0157
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 2, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> <font color="#06989A">♕</font> <font color="#06989A">♔</font> <font color="#06989A">♗</font> <font color="#06989A">♘</font> <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font>. . . <font color="#06989A">♙</font> . . . .
+<font color="#3465A4">[4] </font>. . . . <font color="#D3D7CF">♟</font> . . .
+<font color="#3465A4">[3] </font>. . . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2
+DEBUG: Legal moves = [&apos;g1h3&apos;, &apos;g1f3&apos;, &apos;g1e2&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;d1h5&apos;, &apos;d1g4&apos;, &apos;d1f3&apos;, &apos;d1e2&apos;, &apos;b1c3&apos;, &apos;b1a3&apos;, &apos;e4d5&apos;, &apos;e4e5&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;c2c3&apos;, &apos;b2b3&apos;, &apos;a2a3&apos;, &apos;h2h4&apos;, &apos;g2g4&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;c2c4&apos;, &apos;b2b4&apos;, &apos;a2a4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = e4d5
+DEBUG: [Player1] AI&apos;s move_score = [0.93704534]
+
+Game analysis[from white&apos;s perspective] = 0.0081
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 2, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> <font color="#06989A">♕</font> <font color="#06989A">♔</font> <font color="#06989A">♗</font> <font color="#06989A">♘</font> <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font>. . . <font color="#D3D7CF">♟</font> . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2
+DEBUG: Legal moves = [&apos;g8h6&apos;, &apos;g8f6&apos;, &apos;e8d7&apos;, &apos;d8d7&apos;, &apos;d8d6&apos;, &apos;d8d5&apos;, &apos;c8d7&apos;, &apos;c8e6&apos;, &apos;c8f5&apos;, &apos;c8g4&apos;, &apos;c8h3&apos;, &apos;b8d7&apos;, &apos;b8c6&apos;, &apos;b8a6&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;e7e6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;f7f5&apos;, &apos;e7e5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = d8d5
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.012
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 3, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> <font color="#06989A">♘</font> <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font>. . . <font color="#06989A">♕</font> . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3
+DEBUG: Legal moves = [&apos;g1h3&apos;, &apos;g1f3&apos;, &apos;g1e2&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;d1h5&apos;, &apos;d1g4&apos;, &apos;d1f3&apos;, &apos;d1e2&apos;, &apos;b1c3&apos;, &apos;b1a3&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;c2c3&apos;, &apos;b2b3&apos;, &apos;a2a3&apos;, &apos;h2h4&apos;, &apos;g2g4&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;c2c4&apos;, &apos;b2b4&apos;, &apos;a2a4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = g1f3
+DEBUG: [Player1] AI&apos;s move_score = [0.9749707]
+
+Game analysis[from white&apos;s perspective] = 0.004
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 3, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> <font color="#06989A">♘</font> <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font>. . . <font color="#06989A">♕</font> . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . . . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnb1kbnr/ppp1pppp/8/3q4/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 3
+DEBUG: Legal moves = [&apos;g8h6&apos;, &apos;g8f6&apos;, &apos;e8d8&apos;, &apos;e8d7&apos;, &apos;c8d7&apos;, &apos;c8e6&apos;, &apos;c8f5&apos;, &apos;c8g4&apos;, &apos;c8h3&apos;, &apos;b8d7&apos;, &apos;b8c6&apos;, &apos;b8a6&apos;, &apos;d5d8&apos;, &apos;d5d7&apos;, &apos;d5e6&apos;, &apos;d5d6&apos;, &apos;d5c6&apos;, &apos;d5h5&apos;, &apos;d5g5&apos;, &apos;d5f5&apos;, &apos;d5e5&apos;, &apos;d5c5&apos;, &apos;d5b5&apos;, &apos;d5a5&apos;, &apos;d5e4&apos;, &apos;d5d4&apos;, &apos;d5c4&apos;, &apos;d5f3&apos;, &apos;d5d3&apos;, &apos;d5b3&apos;, &apos;d5d2&apos;, &apos;d5a2&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;e7e6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;f7f5&apos;, &apos;e7e5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = g8f6
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.0206
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 4, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font>. . . <font color="#06989A">♕</font> . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . . . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnb1kb1r/ppp1pppp/5n2/3q4/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 4
+DEBUG: Legal moves = [&apos;f3g5&apos;, &apos;f3e5&apos;, &apos;f3h4&apos;, &apos;f3d4&apos;, &apos;f3g1&apos;, &apos;h1g1&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;d1e2&apos;, &apos;b1c3&apos;, &apos;b1a3&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;d2d3&apos;, &apos;c2c3&apos;, &apos;b2b3&apos;, &apos;a2a3&apos;, &apos;h2h4&apos;, &apos;g2g4&apos;, &apos;d2d4&apos;, &apos;c2c4&apos;, &apos;b2b4&apos;, &apos;a2a4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = b1c3
+DEBUG: [Player1] AI&apos;s move_score = [0.85367846]
+
+Game analysis[from white&apos;s perspective] = 0.0045
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 4, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font>. . . <font color="#06989A">♕</font> . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . <font color="#D3D7CF">♞</font> . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnb1kb1r/ppp1pppp/5n2/3q4/8/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 4
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;e8d8&apos;, &apos;e8d7&apos;, &apos;c8d7&apos;, &apos;c8e6&apos;, &apos;c8f5&apos;, &apos;c8g4&apos;, &apos;c8h3&apos;, &apos;b8d7&apos;, &apos;b8c6&apos;, &apos;b8a6&apos;, &apos;f6g8&apos;, &apos;f6d7&apos;, &apos;f6h5&apos;, &apos;f6g4&apos;, &apos;f6e4&apos;, &apos;d5d8&apos;, &apos;d5d7&apos;, &apos;d5e6&apos;, &apos;d5d6&apos;, &apos;d5c6&apos;, &apos;d5h5&apos;, &apos;d5g5&apos;, &apos;d5f5&apos;, &apos;d5e5&apos;, &apos;d5c5&apos;, &apos;d5b5&apos;, &apos;d5a5&apos;, &apos;d5e4&apos;, &apos;d5d4&apos;, &apos;d5c4&apos;, &apos;d5f3&apos;, &apos;d5d3&apos;, &apos;d5b3&apos;, &apos;d5d2&apos;, &apos;d5a2&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;e7e6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;e7e5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = d5a5
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.0143
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 5, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font>. . <font color="#D3D7CF">♞</font> . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnb1kb1r/ppp1pppp/5n2/q7/8/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 5
+DEBUG: Legal moves = [&apos;f3g5&apos;, &apos;f3e5&apos;, &apos;f3h4&apos;, &apos;f3d4&apos;, &apos;f3g1&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3b1&apos;, &apos;h1g1&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;d1e2&apos;, &apos;a1b1&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;a2a3&apos;, &apos;h2h4&apos;, &apos;g2g4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;, &apos;a2a4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.7
+DEBUG: [Player1] AI&apos;s move = a2a3
+DEBUG: [Player1] AI&apos;s move_score = [0.93307453]
+
+Game analysis[from white&apos;s perspective] = 0.0109
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 5, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> <font color="#06989A">♘</font> <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = rnb1kb1r/ppp1pppp/5n2/q7/8/P1N2N2/1PPP1PPP/R1BQKB1R b KQkq - 0 5
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;e8d8&apos;, &apos;e8d7&apos;, &apos;c8d7&apos;, &apos;c8e6&apos;, &apos;c8f5&apos;, &apos;c8g4&apos;, &apos;c8h3&apos;, &apos;b8d7&apos;, &apos;b8c6&apos;, &apos;b8a6&apos;, &apos;f6g8&apos;, &apos;f6d7&apos;, &apos;f6h5&apos;, &apos;f6d5&apos;, &apos;f6g4&apos;, &apos;f6e4&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5h5&apos;, &apos;a5g5&apos;, &apos;a5f5&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;e7e6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;e7e5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = b8d7
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.0148
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 6, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppnpppp/5n2/q7/8/P1N2N2/1PPP1PPP/R1BQKB1R w KQkq - 1 6
+DEBUG: Legal moves = [&apos;f3g5&apos;, &apos;f3e5&apos;, &apos;f3h4&apos;, &apos;f3d4&apos;, &apos;f3g1&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3b1&apos;, &apos;h1g1&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;d1e2&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;a3a4&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;h2h4&apos;, &apos;g2g4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = f3h4
+DEBUG: [Player1] AI&apos;s move_score = [0.93856364]
+
+Game analysis[from white&apos;s perspective] = -0.0033
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 6, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppnpppp/5n2/q7/7N/P1N5/1PPP1PPP/R1BQKB1R b KQkq - 2 6
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;e8d8&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;f6g8&apos;, &apos;f6h5&apos;, &apos;f6d5&apos;, &apos;f6g4&apos;, &apos;f6e4&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5h5&apos;, &apos;a5g5&apos;, &apos;a5f5&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;e7e6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;e7e5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = e7e6
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.0019
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 7, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4pn2/q7/7N/P1N5/1PPP1PPP/R1BQKB1R w KQkq - 0 7
+DEBUG: Legal moves = [&apos;h4g6&apos;, &apos;h4f5&apos;, &apos;h4f3&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3b1&apos;, &apos;h1g1&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;d1h5&apos;, &apos;d1g4&apos;, &apos;d1f3&apos;, &apos;d1e2&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;a3a4&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;g2g4&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:05.3
+DEBUG: [Player1] AI&apos;s move = d1g4
+DEBUG: [Player1] AI&apos;s move_score = [0.5299322]
+
+Game analysis[from white&apos;s perspective] = -0.1353
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 7, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#D3D7CF">♛</font> <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4pn2/q7/6QN/P1N5/1PPP1PPP/R1B1KB1R b KQkq - 1 7
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;e8d8&apos;, &apos;e8e7&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;f6g8&apos;, &apos;f6h5&apos;, &apos;f6d5&apos;, &apos;f6g4&apos;, &apos;f6e4&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5h5&apos;, &apos;a5g5&apos;, &apos;a5f5&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;e6e5&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = f6g4
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.1312
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 8, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4p3/q7/6nN/P1N5/1PPP1PPP/R1B1KB1R w KQkq - 0 8
+DEBUG: Legal moves = [&apos;h4g6&apos;, &apos;h4f5&apos;, &apos;h4f3&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3d1&apos;, &apos;c3b1&apos;, &apos;h1g1&apos;, &apos;f1a6&apos;, &apos;f1b5&apos;, &apos;f1c4&apos;, &apos;f1d3&apos;, &apos;f1e2&apos;, &apos;e1e2&apos;, &apos;e1d1&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;a3a4&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = f1e2
+DEBUG: [Player1] AI&apos;s move_score = [0.3078942]
+
+Game analysis[from white&apos;s perspective] = -0.1347
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 8, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4p3/q7/6nN/P1N5/1PPPBPPP/R1B1K2R b KQkq - 1 8
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;e8d8&apos;, &apos;e8e7&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5h5&apos;, &apos;a5g5&apos;, &apos;a5f5&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;e6e5&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;f7f5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = g4f6
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.1319
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 9, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . . <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4pn2/q7/7N/P1N5/1PPPBPPP/R1B1K2R w KQkq - 2 9
+DEBUG: Legal moves = [&apos;h4g6&apos;, &apos;h4f5&apos;, &apos;h4f3&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3a2&apos;, &apos;c3d1&apos;, &apos;c3b1&apos;, &apos;e2a6&apos;, &apos;e2h5&apos;, &apos;e2b5&apos;, &apos;e2g4&apos;, &apos;e2c4&apos;, &apos;e2f3&apos;, &apos;e2d3&apos;, &apos;e2f1&apos;, &apos;e2d1&apos;, &apos;h1g1&apos;, &apos;h1f1&apos;, &apos;e1f1&apos;, &apos;e1d1&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;e1g1&apos;, &apos;a3a4&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;g2g4&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = e2g4
+DEBUG: [Player1] AI&apos;s move_score = [0.28960204]
+
+Game analysis[from white&apos;s perspective] = -0.1883
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 9, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> <font color="#06989A">♘</font> . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4pn2/q7/6BN/P1N5/1PPP1PPP/R1B1K2R b KQkq - 3 9
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;e8d8&apos;, &apos;e8e7&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;f6g8&apos;, &apos;f6h5&apos;, &apos;f6d5&apos;, &apos;f6g4&apos;, &apos;f6e4&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5h5&apos;, &apos;a5g5&apos;, &apos;a5f5&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;e6e5&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = f6g4
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.1811
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 10, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . . . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> <font color="#D3D7CF">♞</font>
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4p3/q7/6nN/P1N5/1PPP1PPP/R1B1K2R w KQkq - 0 10
+DEBUG: Legal moves = [&apos;h4g6&apos;, &apos;h4f5&apos;, &apos;h4f3&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3d1&apos;, &apos;c3b1&apos;, &apos;h1g1&apos;, &apos;h1f1&apos;, &apos;e1e2&apos;, &apos;e1f1&apos;, &apos;e1d1&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;e1g1&apos;, &apos;a3a4&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = h4f5
+DEBUG: [Player1] AI&apos;s move_score = [0.09353891]
+
+Game analysis[from white&apos;s perspective] = -0.2386
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 10, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . <font color="#06989A">♙</font> . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#D3D7CF">♞</font> . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/4p3/q4N2/6n1/P1N5/1PPP1PPP/R1B1K2R b KQkq - 1 10
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;e8d8&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5f5&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;e6f5&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;e6e5&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = e6f5
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.2259
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 11, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/8/q4p2/6n1/P1N5/1PPP1PPP/R1B1K2R w KQkq - 0 11
+DEBUG: Legal moves = [&apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3d1&apos;, &apos;c3b1&apos;, &apos;h1g1&apos;, &apos;h1f1&apos;, &apos;e1e2&apos;, &apos;e1f1&apos;, &apos;e1d1&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;e1g1&apos;, &apos;a3a4&apos;, &apos;h2h3&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;d2d3&apos;, &apos;b2b3&apos;, &apos;h2h4&apos;, &apos;f2f4&apos;, &apos;d2d4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = d2d3
+DEBUG: [Player1] AI&apos;s move_score = [0.05732953]
+
+Game analysis[from white&apos;s perspective] = -0.239
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 11, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> . .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♟</font> . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/8/q4p2/6n1/P1NP4/1PP2PPP/R1B1K2R b KQkq - 0 11
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;e8d8&apos;, &apos;e8e7&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = g4h2
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.2329
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 12, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> . .
+<font color="#3465A4">[4] </font>. . . . . . . .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> <font color="#D3D7CF">♟</font> . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#06989A">♘</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/8/q4p2/8/P1NP4/1PP2PPn/R1B1K2R w KQkq - 0 12
+DEBUG: Legal moves = [&apos;h1h2&apos;, &apos;h1g1&apos;, &apos;h1f1&apos;, &apos;e1e2&apos;, &apos;e1d2&apos;, &apos;e1d1&apos;, &apos;c1h6&apos;, &apos;c1g5&apos;, &apos;c1f4&apos;, &apos;c1e3&apos;, &apos;c1d2&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;d3d4&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;b2b3&apos;, &apos;g2g4&apos;, &apos;f2f4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = d3d4
+DEBUG: [Player1] AI&apos;s move_score = [0.197326]
+
+Game analysis[from white&apos;s perspective] = -0.2359
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 12, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> . .
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . . .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#06989A">♘</font>
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/8/q4p2/3P4/P1N5/1PP2PPn/R1B1K2R b KQkq - 0 12
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;e8d8&apos;, &apos;e8e7&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;h2g4&apos;, &apos;h2f3&apos;, &apos;h2f1&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;h7h5&apos;, &apos;g7g5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = h2g4
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.2344
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 13, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> . .
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . <font color="#D3D7CF">♝</font> . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/8/q4p2/3P2n1/P1N5/1PP2PP1/R1B1K2R w KQkq - 1 13
+DEBUG: Legal moves = [&apos;h1h7&apos;, &apos;h1h6&apos;, &apos;h1h5&apos;, &apos;h1h4&apos;, &apos;h1h3&apos;, &apos;h1h2&apos;, &apos;h1g1&apos;, &apos;h1f1&apos;, &apos;e1e2&apos;, &apos;e1d2&apos;, &apos;e1f1&apos;, &apos;e1d1&apos;, &apos;c1h6&apos;, &apos;c1g5&apos;, &apos;c1f4&apos;, &apos;c1e3&apos;, &apos;c1d2&apos;, &apos;a1a2&apos;, &apos;a1b1&apos;, &apos;e1g1&apos;, &apos;d4d5&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;b2b3&apos;, &apos;f2f4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = c1g5
+DEBUG: [Player1] AI&apos;s move_score = [0.26577604]
+
+Game analysis[from white&apos;s perspective] = -0.2374
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 13, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> <font color="#06989A">♗</font> . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1kb1r/pppn1ppp/8/q4pB1/3P2n1/P1N5/1PP2PP1/R3K2R b KQkq - 2 13
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;f8e7&apos;, &apos;f8d6&apos;, &apos;f8c5&apos;, &apos;f8b4&apos;, &apos;f8a3&apos;, &apos;a8b8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;h7h5&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = f8d6
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.2376
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 14, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . <font color="#D3D7CF">♜</font>
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/3b4/q4pB1/3P2n1/P1N5/1PP2PP1/R3K2R w KQkq - 3 14
+DEBUG: Legal moves = [&apos;g5d8&apos;, &apos;g5e7&apos;, &apos;g5h6&apos;, &apos;g5f6&apos;, &apos;g5h4&apos;, &apos;g5f4&apos;, &apos;g5e3&apos;, &apos;g5d2&apos;, &apos;g5c1&apos;, &apos;h1h7&apos;, &apos;h1h6&apos;, &apos;h1h5&apos;, &apos;h1h4&apos;, &apos;h1h3&apos;, &apos;h1h2&apos;, &apos;h1g1&apos;, &apos;h1f1&apos;, &apos;e1e2&apos;, &apos;e1d2&apos;, &apos;e1f1&apos;, &apos;e1d1&apos;, &apos;a1a2&apos;, &apos;a1d1&apos;, &apos;a1c1&apos;, &apos;a1b1&apos;, &apos;e1g1&apos;, &apos;e1c1&apos;, &apos;d4d5&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;b2b3&apos;, &apos;f2f4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = h1h5
+DEBUG: [Player1] AI&apos;s move_score = [0.41983455]
+
+Game analysis[from white&apos;s perspective] = -0.2466
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 14, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font><font color="#06989A">♕</font> . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/3b4/q4pBR/3P2n1/P1N5/1PP2PP1/R3K3 b Qkq - 4 14
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;d6f8&apos;, &apos;d6e7&apos;, &apos;d6e5&apos;, &apos;d6c5&apos;, &apos;d6f4&apos;, &apos;d6b4&apos;, &apos;d6g3&apos;, &apos;d6a3&apos;, &apos;d6h2&apos;, &apos;a5b6&apos;, &apos;a5a6&apos;, &apos;a5e5&apos;, &apos;a5d5&apos;, &apos;a5c5&apos;, &apos;a5b5&apos;, &apos;a5b4&apos;, &apos;a5a4&apos;, &apos;a5c3&apos;, &apos;a5a3&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;e8g8&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = a5b6
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.2458
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 15, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. <font color="#06989A">♕</font> . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/1q1b4/5pBR/3P2n1/P1N5/1PP2PP1/R3K3 w Qkq - 5 15
+DEBUG: Legal moves = [&apos;h5h7&apos;, &apos;h5h6&apos;, &apos;h5h4&apos;, &apos;h5h3&apos;, &apos;h5h2&apos;, &apos;h5h1&apos;, &apos;g5d8&apos;, &apos;g5e7&apos;, &apos;g5h6&apos;, &apos;g5f6&apos;, &apos;g5h4&apos;, &apos;g5f4&apos;, &apos;g5e3&apos;, &apos;g5d2&apos;, &apos;g5c1&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3d1&apos;, &apos;c3b1&apos;, &apos;e1e2&apos;, &apos;e1d2&apos;, &apos;e1f1&apos;, &apos;e1d1&apos;, &apos;a1a2&apos;, &apos;a1d1&apos;, &apos;a1c1&apos;, &apos;a1b1&apos;, &apos;e1c1&apos;, &apos;d4d5&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;b2b3&apos;, &apos;f2f4&apos;, &apos;b2b4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = b2b3
+DEBUG: [Player1] AI&apos;s move_score = [0.4187083]
+
+Game analysis[from white&apos;s perspective] = -0.3094
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 15, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. <font color="#06989A">♕</font> . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . <font color="#D3D7CF">♟</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/1q1b4/5pBR/3P2n1/PPN5/2P2PP1/R3K3 b Qkq - 0 15
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;d6f8&apos;, &apos;d6e7&apos;, &apos;d6e5&apos;, &apos;d6c5&apos;, &apos;d6f4&apos;, &apos;d6b4&apos;, &apos;d6g3&apos;, &apos;d6a3&apos;, &apos;d6h2&apos;, &apos;b6c6&apos;, &apos;b6a6&apos;, &apos;b6c5&apos;, &apos;b6b5&apos;, &apos;b6a5&apos;, &apos;b6d4&apos;, &apos;b6b4&apos;, &apos;b6b3&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;e8g8&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = b6d4
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.308
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 16, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . <font color="#06989A">♕</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♞</font> . . . . .
+<font color="#3465A4">[2] </font>. . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/3b4/5pBR/3q2n1/PPN5/2P2PP1/R3K3 w Qkq - 0 16
+DEBUG: Legal moves = [&apos;h5h7&apos;, &apos;h5h6&apos;, &apos;h5h4&apos;, &apos;h5h3&apos;, &apos;h5h2&apos;, &apos;h5h1&apos;, &apos;g5d8&apos;, &apos;g5e7&apos;, &apos;g5h6&apos;, &apos;g5f6&apos;, &apos;g5h4&apos;, &apos;g5f4&apos;, &apos;g5e3&apos;, &apos;g5d2&apos;, &apos;g5c1&apos;, &apos;c3d5&apos;, &apos;c3b5&apos;, &apos;c3e4&apos;, &apos;c3a4&apos;, &apos;c3e2&apos;, &apos;c3a2&apos;, &apos;c3d1&apos;, &apos;c3b1&apos;, &apos;e1e2&apos;, &apos;e1f1&apos;, &apos;a1a2&apos;, &apos;a1d1&apos;, &apos;a1c1&apos;, &apos;a1b1&apos;, &apos;b3b4&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;f2f4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = c3a2
+DEBUG: [Player1] AI&apos;s move_score = [0.24024913]
+
+Game analysis[from white&apos;s perspective] = -0.3628
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 16, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . <font color="#06989A">♕</font> . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♞</font> . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#D3D7CF">♜</font> . . . <font color="#D3D7CF">♚</font> . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/3b4/5pBR/3q2n1/PP6/N1P2PP1/R3K3 b Qkq - 1 16
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;d6f8&apos;, &apos;d6e7&apos;, &apos;d6e5&apos;, &apos;d6c5&apos;, &apos;d6f4&apos;, &apos;d6b4&apos;, &apos;d6g3&apos;, &apos;d6a3&apos;, &apos;d6h2&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;d4f6&apos;, &apos;d4b6&apos;, &apos;d4e5&apos;, &apos;d4d5&apos;, &apos;d4c5&apos;, &apos;d4f4&apos;, &apos;d4e4&apos;, &apos;d4c4&apos;, &apos;d4b4&apos;, &apos;d4a4&apos;, &apos;d4e3&apos;, &apos;d4d3&apos;, &apos;d4c3&apos;, &apos;d4f2&apos;, &apos;d4d2&apos;, &apos;d4b2&apos;, &apos;d4d1&apos;, &apos;d4a1&apos;, &apos;e8g8&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = d4a1
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.3618
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 17, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♞</font> . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#06989A">♕</font> . . . <font color="#D3D7CF">♚</font> . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/3b4/5pBR/6n1/PP6/N1P2PP1/q3K3 w kq - 0 17
+DEBUG: Legal moves = [&apos;e1e2&apos;, &apos;e1d2&apos;, &apos;g5c1&apos;, &apos;a2c1&apos;]
+<span style="background-color:#DEDEDE"><font color="#242424"><b>INFO: it is a check.</b></font></span>
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = e1d2
+DEBUG: [Player1] AI&apos;s move_score = [0.08353655]
+
+Game analysis[from white&apos;s perspective] = -0.3634
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 17, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . . .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♞</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♚</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#06989A">♕</font> . . . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1ppp/3b4/5pBR/6n1/PP6/N1PK1PP1/q7 b kq - 1 17
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;d6f8&apos;, &apos;d6e7&apos;, &apos;d6e5&apos;, &apos;d6c5&apos;, &apos;d6f4&apos;, &apos;d6b4&apos;, &apos;d6g3&apos;, &apos;d6a3&apos;, &apos;d6h2&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;a1f6&apos;, &apos;a1e5&apos;, &apos;a1d4&apos;, &apos;a1c3&apos;, &apos;a1b2&apos;, &apos;a1a2&apos;, &apos;a1h1&apos;, &apos;a1g1&apos;, &apos;a1f1&apos;, &apos;a1e1&apos;, &apos;a1d1&apos;, &apos;a1c1&apos;, &apos;a1b1&apos;, &apos;e8g8&apos;, &apos;h7h6&apos;, &apos;g7g6&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = g7g6
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.3628
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 18, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . <font color="#06989A">♙</font> .
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♞</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♚</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#06989A">♕</font> . . . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/3b2p1/5pBR/6n1/PP6/N1PK1PP1/q7 w kq - 0 18
+DEBUG: Legal moves = [&apos;h5h7&apos;, &apos;h5h6&apos;, &apos;h5h4&apos;, &apos;h5h3&apos;, &apos;h5h2&apos;, &apos;h5h1&apos;, &apos;g5d8&apos;, &apos;g5e7&apos;, &apos;g5h6&apos;, &apos;g5f6&apos;, &apos;g5h4&apos;, &apos;g5f4&apos;, &apos;g5e3&apos;, &apos;d2d3&apos;, &apos;d2e2&apos;, &apos;a2b4&apos;, &apos;a2c3&apos;, &apos;a2c1&apos;, &apos;b3b4&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;c2c3&apos;, &apos;f2f4&apos;, &apos;c2c4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = h5h6
+DEBUG: [Player1] AI&apos;s move_score = [0.08461297]
+
+Game analysis[from white&apos;s perspective] = -0.3822
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 18, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#D3D7CF">♞</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♚</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font><font color="#06989A">♕</font> . . . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/3b2pR/5pB1/6n1/PP6/N1PK1PP1/q7 b kq - 1 18
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;d6f8&apos;, &apos;d6e7&apos;, &apos;d6e5&apos;, &apos;d6c5&apos;, &apos;d6f4&apos;, &apos;d6b4&apos;, &apos;d6g3&apos;, &apos;d6a3&apos;, &apos;d6h2&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;a1g7&apos;, &apos;a1f6&apos;, &apos;a1e5&apos;, &apos;a1d4&apos;, &apos;a1c3&apos;, &apos;a1b2&apos;, &apos;a1a2&apos;, &apos;a1h1&apos;, &apos;a1g1&apos;, &apos;a1f1&apos;, &apos;a1e1&apos;, &apos;a1d1&apos;, &apos;a1c1&apos;, &apos;a1b1&apos;, &apos;e8g8&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = a1a2
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.3843
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 19, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#06989A">♕</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♚</font> . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . . . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/3b2pR/5pB1/6n1/PP6/q1PK1PP1/8 w kq - 0 19
+DEBUG: Legal moves = [&apos;h6h7&apos;, &apos;h6g6&apos;, &apos;h6h5&apos;, &apos;h6h4&apos;, &apos;h6h3&apos;, &apos;h6h2&apos;, &apos;h6h1&apos;, &apos;g5d8&apos;, &apos;g5e7&apos;, &apos;g5f6&apos;, &apos;g5h4&apos;, &apos;g5f4&apos;, &apos;g5e3&apos;, &apos;d2d3&apos;, &apos;d2c3&apos;, &apos;d2e2&apos;, &apos;d2e1&apos;, &apos;d2d1&apos;, &apos;d2c1&apos;, &apos;b3b4&apos;, &apos;a3a4&apos;, &apos;g2g3&apos;, &apos;f2f3&apos;, &apos;f2f4&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.7
+DEBUG: [Player1] AI&apos;s move = d2c1
+DEBUG: [Player1] AI&apos;s move_score = [0.08239527]
+
+Game analysis[from white&apos;s perspective] = -0.4298
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 19, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . <font color="#06989A">♗</font> . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#06989A">♕</font> . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . <font color="#D3D7CF">♚</font> . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/3b2pR/5pB1/6n1/PP6/q1P2PP1/2K5 b kq - 1 19
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;d6f8&apos;, &apos;d6e7&apos;, &apos;d6e5&apos;, &apos;d6c5&apos;, &apos;d6f4&apos;, &apos;d6b4&apos;, &apos;d6g3&apos;, &apos;d6a3&apos;, &apos;d6h2&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;a2b3&apos;, &apos;a2a3&apos;, &apos;a2c2&apos;, &apos;a2b2&apos;, &apos;a2b1&apos;, &apos;a2a1&apos;, &apos;e8g8&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = d6a3
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.4347
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 20, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#06989A">♕</font> . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . <font color="#D3D7CF">♚</font> . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/6pR/5pB1/6n1/bP6/q1P2PP1/2K5 w kq - 0 20
+DEBUG: Legal moves = [&apos;c1d2&apos;, &apos;c1d1&apos;]
+<span style="background-color:#DEDEDE"><font color="#242424"><b>INFO: it is a check.</b></font></span>
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = c1d1
+DEBUG: [Player1] AI&apos;s move_score = [0.04498634]
+
+Game analysis[from white&apos;s perspective] = -0.4413
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 20, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font><font color="#06989A">♕</font> . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . . <font color="#D3D7CF">♚</font> . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/6pR/5pB1/6n1/bP6/q1P2PP1/3K4 b kq - 1 20
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;a3f8&apos;, &apos;a3e7&apos;, &apos;a3d6&apos;, &apos;a3c5&apos;, &apos;a3b4&apos;, &apos;a3b2&apos;, &apos;a3c1&apos;, &apos;a2b3&apos;, &apos;a2c2&apos;, &apos;a2b2&apos;, &apos;a2b1&apos;, &apos;a2a1&apos;, &apos;e8g8&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = a2b1
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.4691
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 21, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font>. . <font color="#D3D7CF">♟</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. <font color="#06989A">♕</font> . <font color="#D3D7CF">♚</font> . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/6pR/5pB1/6n1/bP6/2P2PP1/1q1K4 w kq - 2 21
+DEBUG: Legal moves = [&apos;d1e2&apos;, &apos;d1d2&apos;, &apos;g5c1&apos;]
+<span style="background-color:#DEDEDE"><font color="#242424"><b>INFO: it is a check.</b></font></span>
+[ExecutionTime] &quot;(block)&quot; = 00:00:02.8
+DEBUG: [Player1] AI&apos;s move = d1e2
+DEBUG: [Player1] AI&apos;s move_score = [0.02977836]
+
+Game analysis[from white&apos;s perspective] = -0.487
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 21, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font>. . <font color="#D3D7CF">♟</font> . <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. <font color="#06989A">♕</font> . . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/6pR/5pB1/6n1/bP6/2P1KPP1/1q6 b kq - 3 21
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;a3f8&apos;, &apos;a3e7&apos;, &apos;a3d6&apos;, &apos;a3c5&apos;, &apos;a3b4&apos;, &apos;a3b2&apos;, &apos;a3c1&apos;, &apos;b1b3&apos;, &apos;b1c2&apos;, &apos;b1b2&apos;, &apos;b1a2&apos;, &apos;b1h1&apos;, &apos;b1g1&apos;, &apos;b1f1&apos;, &apos;b1e1&apos;, &apos;b1d1&apos;, &apos;b1c1&apos;, &apos;b1a1&apos;, &apos;e8g8&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = b1c2
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = -0.4879
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 22, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font>. . <font color="#06989A">♕</font> . <font color="#D3D7CF">♚</font> <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . . . . . . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/6pR/5pB1/6n1/bP6/2q1KPP1/8 w kq - 0 22
+DEBUG: Legal moves = [&apos;e2f3&apos;, &apos;e2f1&apos;, &apos;e2e1&apos;, &apos;g5d2&apos;]
+<span style="background-color:#DEDEDE"><font color="#242424"><b>INFO: it is a check.</b></font></span>
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.2
+DEBUG: [Player1] AI&apos;s move = e2f1
+DEBUG: [Player1] AI&apos;s move_score = [0.02475189]
+
+Game analysis[from white&apos;s perspective] = -0.995
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 22, black</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font>. . <font color="#06989A">♕</font> . . <font color="#D3D7CF">♟</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . . . . <font color="#D3D7CF">♚</font> . .
+
+
+DEBUG: board_play.fen() = r1b1k2r/pppn1p1p/6pR/5pB1/6n1/bP6/2q2PP1/5K2 b kq - 1 22
+DEBUG: Legal moves = [&apos;h8g8&apos;, &apos;h8f8&apos;, &apos;e8f8&apos;, &apos;a8b8&apos;, &apos;d7f8&apos;, &apos;d7b8&apos;, &apos;d7f6&apos;, &apos;d7b6&apos;, &apos;d7e5&apos;, &apos;d7c5&apos;, &apos;g4h6&apos;, &apos;g4f6&apos;, &apos;g4e5&apos;, &apos;g4e3&apos;, &apos;g4h2&apos;, &apos;g4f2&apos;, &apos;a3f8&apos;, &apos;a3e7&apos;, &apos;a3d6&apos;, &apos;a3c5&apos;, &apos;a3b4&apos;, &apos;a3b2&apos;, &apos;a3c1&apos;, &apos;c2c6&apos;, &apos;c2c5&apos;, &apos;c2e4&apos;, &apos;c2c4&apos;, &apos;c2d3&apos;, &apos;c2c3&apos;, &apos;c2b3&apos;, &apos;c2f2&apos;, &apos;c2e2&apos;, &apos;c2d2&apos;, &apos;c2b2&apos;, &apos;c2a2&apos;, &apos;c2d1&apos;, &apos;c2c1&apos;, &apos;c2b1&apos;, &apos;e8g8&apos;, &apos;f7f6&apos;, &apos;c7c6&apos;, &apos;b7b6&apos;, &apos;a7a6&apos;, &apos;f5f4&apos;, &apos;c7c5&apos;, &apos;b7b5&apos;, &apos;a7a5&apos;]
+[ExecutionTime] &quot;(block)&quot; = 00:00:00.0
+DEBUG: [Player2] AI&apos;s move = c2f2
+DEBUG: [Player2] AI&apos;s move_score = None
+
+Game analysis[from white&apos;s perspective] = 0.0
+
+
+
+<span style="background-color:#EF2929"><font color="#242424"><b>### Board state number = 23, white</b></font></span>
+
+<font color="#3465A4">   [a|b|c|d|e|f|g|h]</font>
+<font color="#3465A4">[8] </font><font color="#06989A">♖</font> . <font color="#06989A">♗</font> . <font color="#06989A">♔</font> . . <font color="#06989A">♖</font>
+<font color="#3465A4">[7] </font><font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♙</font> <font color="#06989A">♘</font> . <font color="#06989A">♙</font> . <font color="#06989A">♙</font>
+<font color="#3465A4">[6] </font>. . . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♜</font>
+<font color="#3465A4">[5] </font>. . . . . <font color="#06989A">♙</font> <font color="#D3D7CF">♝</font> .
+<font color="#3465A4">[4] </font>. . . . . . <font color="#06989A">♘</font> .
+<font color="#3465A4">[3] </font><font color="#06989A">♗</font> <font color="#D3D7CF">♟</font> . . . . . .
+<font color="#3465A4">[2] </font>. . . . . <font color="#06989A">♕</font> <font color="#D3D7CF">♟</font> .
+<font color="#3465A4">[1] </font>. . . . . <font color="#D3D7CF">♚</font> . .
+
+
+RESULTS: Player2 wins
+
+
+Game moves list:
+[&apos;e2e4&apos;, &apos;d7d5&apos;, &apos;e4d5&apos;, &apos;d8d5&apos;, &apos;g1f3&apos;, &apos;g8f6&apos;, &apos;b1c3&apos;, &apos;d5a5&apos;, &apos;a2a3&apos;, &apos;b8d7&apos;, &apos;f3h4&apos;, &apos;e7e6&apos;, &apos;d1g4&apos;, &apos;f6g4&apos;, &apos;f1e2&apos;, &apos;g4f6&apos;, &apos;e2g4&apos;, &apos;f6g4&apos;, &apos;h4f5&apos;, &apos;e6f5&apos;, &apos;d2d3&apos;, &apos;g4h2&apos;, &apos;d3d4&apos;, &apos;h2g4&apos;, &apos;c1g5&apos;, &apos;f8d6&apos;, &apos;h1h5&apos;, &apos;a5b6&apos;, &apos;b2b3&apos;, &apos;b6d4&apos;, &apos;c3a2&apos;, &apos;d4a1&apos;, &apos;e1d2&apos;, &apos;g7g6&apos;, &apos;h5h6&apos;, &apos;a1a2&apos;, &apos;d2c1&apos;, &apos;d6a3&apos;, &apos;c1d1&apos;, &apos;a2b1&apos;, &apos;d1e2&apos;, &apos;b1c2&apos;, &apos;e2f1&apos;, &apos;c2f2&apos;]
+
+Closing the connection with the engine...
+Connection closed.
+(chessCNN) <font color="#8AE234"><b>➜  </b></font><font color="#34E2E2"><b>code</b></font> <font color="#729FCF"><b>git:(</b></font><font color="#EF2929"><b>main</b></font><font color="#729FCF"><b>) </b></font><font color="#FCE94F"><b>✗</b></font> </pre>
