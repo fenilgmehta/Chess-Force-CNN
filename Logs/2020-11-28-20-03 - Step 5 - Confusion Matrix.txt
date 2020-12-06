@@ -1,0 +1,64 @@
+(fm) ➜  code ipython
+Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.19.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import math
+   ...: import joblib
+   ...: import pandas as pd
+   ...: import step_02_ScoreNormalizer as step_02
+   ...: from step_03a_ffnn import *
+   ...: 
+   ...: 
+   ...: def one_hot_to_linear(y):
+   ...:     cols = y.shape[1]
+   ...:     if cols % 2 == 0:
+   ...:         colsBy2 = cols // 2        # even
+   ...:     else:
+   ...:         colsBy2 = (cols + 1) // 2  # odd
+   ...: 
+   ...:     ydash = np.zeros((y.shape[0],))
+   ...:     ydash = np.argmax(y, axis=1) - colsBy2
+   ...: 
+   ...:     # even
+   ...:     if cols % 2 == 0: ydash[-0.5 < ydash] += 1
+   ...:     return ydash
+   ...: 
+
+In [2]: 
+   ...: # Create the Model object
+   ...: # modelCNN = NNBuilder.build("cnn-mg006-be01588-sn000-ep00024-weight-v001.h5")
+   ...: # modelCNN = NNBuilder.build("cnn-mg007-be01588-sn000-ep00009-weight-v001.h5")
+   ...: modelCNN = NNBuilder.build("cnn-mg007-be01588-sn000-ep00012-weight-v001.h5")
+   ...: 
+   ...: # Load actual dataset
+   ...: # dataX, dataY = joblib.load("04_pkl_data/complete_kingbase_dataset.pkl")
+   ...: dataX, dataY = joblib.load("../../Chess-Force-CNN-Dataset/04_pkl_data_combined/all_combined.pkl")
+   ...: 
+
+In [3]: # Normalize the data the same was as it was done during training
+   ...: # TO UPDATE THIS
+   ...: dataY = step_02.ScoreNormalizer.normalize_007(dataY)
+   ...: 
+   ...: # Generate Predictions
+   ...: predicted_y_probabilities = modelCNN.c_predict(dataX)
+   ...: joblib.dump(predicted_y_probabilities, filename="TrainDataPredictions_cnn-mg007-be01588-sn000-ep00012-weight-v001.pkl", compress=1)
+   ...: 
+   ...: # Generate confusion matrix
+   ...: # REFER: https://stackoverflow.com/questions/2148543/how-to-write-a-confusion-matrix-in-python
+   ...: y_actu = pd.Series(one_hot_to_linear(dataY), name='Actual')
+   ...: y_pred = pd.Series(one_hot_to_linear(predicted_y_probabilities), name='Predicted')
+   ...: df_confusion = pd.crosstab(y_actu, y_pred)
+   ...: print(df_confusion)
+   ...: 
+
+
+
+
+Predicted       -2        -1    1       2
+Actual                                   
+-2         1838794   8248576  321  514701
+-1            5387     41050    0    4174
+ 1          426580   1666858  105   84964
+ 2         2393010  13088360  451  723740
+

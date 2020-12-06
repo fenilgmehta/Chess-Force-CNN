@@ -1,0 +1,1993 @@
+(base) ➜  Chess-Force-CNN conda activate fm
+(fm) ➜  Chess-Force-CNN cd code          
+(fm) ➜  code python step_04_play.py play \
+    --game_type=mm                                                                                  \
+    --model_weights_file='../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00009-weight-v001.h5'  \
+    --model_weights_file2='../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5' \
+    --analyze_game                                                                                  \
+    --delay=0
+
+
+{'--analyze_game': True,
+ '--clear_screen': False,
+ '--delay': '0',
+ '--game_type': 'mm',
+ '--help': False,
+ '--input_dir': None,
+ '--model_weights_file': '../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00009-weight-v001.h5',
+ '--model_weights_file2': '../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5',
+ '--move_dir': None,
+ '--moves': None,
+ '--output_dir': None,
+ '--player1_name': 'Player1',
+ '--player2_name': 'Player2',
+ '--version': False,
+ 'iterate_moves': False,
+ 'play': True,
+ 'predict_move': False}
+
+
+Model weights successfully loaded: ../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00009-weight-v001.h5
+Model weights successfully loaded: ../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5
+
+
+### Board state number = 1, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] . . . . . . . .
+[3] . . . . . . . .
+[2] ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+DEBUG: Legal moves = ['g1h3', 'g1f3', 'b1c3', 'b1a3', 'h2h3', 'g2g3', 'f2f3', 'e2e3', 'd2d3', 'c2c3', 'b2b3', 'a2a3', 'h2h4', 'g2g4', 'f2f4', 'e2e4', 'd2d4', 'c2c4', 'b2b4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:02.0
+DEBUG: [Player1] AI's move = g1f3
+DEBUG: [Player1] AI's move_score = 2.764577567577362
+
+Game analysis[from white's perspective] = 0.0026
+
+### Board state number = 1, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] . . . . . . . .
+[3] . . . . . ♞ . .
+[2] ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1
+DEBUG: Legal moves = ['g8h6', 'g8f6', 'b8c6', 'b8a6', 'h7h6', 'g7g6', 'f7f6', 'e7e6', 'd7d6', 'c7c6', 'b7b6', 'a7a6', 'h7h5', 'g7g5', 'f7f5', 'e7e5', 'd7d5', 'c7c5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = d7d5
+DEBUG: [Player2] AI's move_score = [0.98813605]
+
+Game analysis[from white's perspective] = 0.0054
+
+### Board state number = 2, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ . ♙ ♙ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♙ . . . .
+[4] . . . . . . . .
+[3] . . . . . ♞ . .
+[2] ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'h1g1', 'b1c3', 'b1a3', 'h2h3', 'g2g3', 'e2e3', 'd2d3', 'c2c3', 'b2b3', 'a2a3', 'h2h4', 'g2g4', 'e2e4', 'd2d4', 'c2c4', 'b2b4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:01.4
+DEBUG: [Player1] AI's move = c2c4
+DEBUG: [Player1] AI's move_score = 0.32972729206085205
+
+Game analysis[from white's perspective] = 0.0005
+
+### Board state number = 2, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ . ♙ ♙ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♙ . . . .
+[4] . . ♟ . . . . .
+[3] . . . . . ♞ . .
+[2] ♟ ♟ . ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 2
+DEBUG: Legal moves = ['g8h6', 'g8f6', 'e8d7', 'd8d7', 'd8d6', 'c8d7', 'c8e6', 'c8f5', 'c8g4', 'c8h3', 'b8d7', 'b8c6', 'b8a6', 'd5c4', 'h7h6', 'g7g6', 'f7f6', 'e7e6', 'c7c6', 'b7b6', 'a7a6', 'd5d4', 'h7h5', 'g7g5', 'f7f5', 'e7e5', 'c7c5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = e7e5
+DEBUG: [Player2] AI's move_score = [0.7366413]
+
+Game analysis[from white's perspective] = 0.0117
+
+### Board state number = 3, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . ♙ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♙ ♙ . . .
+[4] . . ♟ . . . . .
+[3] . . . . . ♞ . .
+[2] ♟ ♟ . ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp2ppp/8/3pp3/2P5/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 3
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'h1g1', 'd1a4', 'd1b3', 'd1c2', 'b1c3', 'b1a3', 'c4d5', 'c4c5', 'h2h3', 'g2g3', 'e2e3', 'd2d3', 'b2b3', 'a2a3', 'h2h4', 'g2g4', 'e2e4', 'd2d4', 'b2b4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = c4d5
+DEBUG: [Player1] AI's move_score = 0.3213796615600586
+
+Game analysis[from white's perspective] = 0.006
+
+### Board state number = 3, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . ♙ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♟ ♙ . . .
+[4] . . . . . . . .
+[3] . . . . . ♞ . .
+[2] ♟ ♟ . ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp2ppp/8/3Pp3/8/5N2/PP1PPPPP/RNBQKB1R b KQkq - 0 3
+DEBUG: Legal moves = ['g8e7', 'g8h6', 'g8f6', 'f8e7', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'e8e7', 'e8d7', 'd8e7', 'd8d7', 'd8f6', 'd8d6', 'd8g5', 'd8d5', 'd8h4', 'c8d7', 'c8e6', 'c8f5', 'c8g4', 'c8h3', 'b8d7', 'b8c6', 'b8a6', 'h7h6', 'g7g6', 'f7f6', 'c7c6', 'b7b6', 'a7a6', 'e5e4', 'h7h5', 'g7g5', 'f7f5', 'c7c5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:03.4
+DEBUG: [Player2] AI's move = f7f5
+DEBUG: [Player2] AI's move_score = [0.85898405]
+
+Game analysis[from white's perspective] = 0.0228
+
+### Board state number = 4, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . . ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♟ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . . . . . ♞ . .
+[2] ♟ ♟ . ♟ ♟ ♟ ♟ ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp3pp/8/3Ppp2/8/5N2/PP1PPPPP/RNBQKB1R w KQkq - 0 4
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'h1g1', 'd1a4', 'd1b3', 'd1c2', 'b1c3', 'b1a3', 'd5d6', 'h2h3', 'g2g3', 'e2e3', 'd2d3', 'b2b3', 'a2a3', 'h2h4', 'g2g4', 'e2e4', 'd2d4', 'b2b4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = g2g3
+DEBUG: [Player1] AI's move_score = 2.8869441747665405
+
+Game analysis[from white's perspective] = -0.0032
+
+### Board state number = 4, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . . ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♟ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . . . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbqkbnr/ppp3pp/8/3Ppp2/8/5NP1/PP1PPP1P/RNBQKB1R b KQkq - 0 4
+DEBUG: Legal moves = ['g8e7', 'g8h6', 'g8f6', 'f8e7', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'e8f7', 'e8e7', 'e8d7', 'd8e7', 'd8d7', 'd8f6', 'd8d6', 'd8g5', 'd8d5', 'd8h4', 'c8d7', 'c8e6', 'b8d7', 'b8c6', 'b8a6', 'h7h6', 'g7g6', 'c7c6', 'b7b6', 'a7a6', 'f5f4', 'e5e4', 'h7h5', 'g7g5', 'c7c5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = e8f7
+DEBUG: [Player2] AI's move_score = [0.70123315]
+
+Game analysis[from white's perspective] = 0.0551
+
+### Board state number = 5, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ . ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . ♔ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♟ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . . . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ ♞ ♝ ♛ ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbq1bnr/ppp2kpp/8/3Ppp2/8/5NP1/PP1PPP1P/RNBQKB1R w KQ - 1 5
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'h1g1', 'f1h3', 'f1g2', 'd1a4', 'd1b3', 'd1c2', 'b1c3', 'b1a3', 'd5d6', 'g3g4', 'h2h3', 'e2e3', 'd2d3', 'b2b3', 'a2a3', 'h2h4', 'e2e4', 'd2d4', 'b2b4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = d1b3
+DEBUG: [Player1] AI's move_score = 2.8586930632591248
+
+Game analysis[from white's perspective] = 0.0287
+
+### Board state number = 5, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ ♕ . ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . ♔ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♟ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ ♞ ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnbq1bnr/ppp2kpp/8/3Ppp2/8/1Q3NP1/PP1PPP1P/RNB1KB1R b KQ - 2 5
+DEBUG: Legal moves = ['g8e7', 'g8h6', 'g8f6', 'f8e7', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'd8e8', 'd8e7', 'd8d7', 'd8f6', 'd8d6', 'd8g5', 'd8d5', 'd8h4', 'c8d7', 'c8e6', 'b8d7', 'b8c6', 'b8a6', 'f7e8', 'f7e7', 'f7g6', 'f7f6', 'h7h6', 'g7g6', 'c7c6', 'b7b6', 'a7a6', 'f5f4', 'e5e4', 'h7h5', 'g7g5', 'c7c5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = d8d5
+DEBUG: [Player2] AI's move_score = [0.19579506]
+
+Game analysis[from white's perspective] = 0.1524
+
+### Board state number = 6, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . ♔ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♕ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ ♞ ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2bnr/ppp2kpp/8/3qpp2/8/1Q3NP1/PP1PPP1P/RNB1KB1R w KQ - 0 6
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'b3b7', 'b3b6', 'b3d5', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'h1g1', 'f1h3', 'f1g2', 'e1d1', 'b1c3', 'b1a3', 'g3g4', 'h2h3', 'e2e3', 'd2d3', 'a2a3', 'h2h4', 'e2e4', 'd2d4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:01.6
+DEBUG: [Player1] AI's move = b1c3
+DEBUG: [Player1] AI's move_score = 0.4953879117965698
+
+Game analysis[from white's perspective] = 0.0031
+
+### Board state number = 6, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ ♘ ♖
+[7] ♙ ♙ ♙ . . ♔ ♙ ♙
+[6] . . . . . . . .
+[5] . . . ♕ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ ♞ . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2bnr/ppp2kpp/8/3qpp2/8/1QN2NP1/PP1PPP1P/R1B1KB1R b KQ - 1 6
+DEBUG: Legal moves = ['g8e7', 'g8h6', 'g8f6', 'f8e7', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'c8d7', 'c8e6', 'b8d7', 'b8c6', 'b8a6', 'f7e8', 'f7e7', 'f7g6', 'f7f6', 'f7e6', 'd5e6', 'd5c4', 'd5b3', 'h7h6', 'g7g6', 'c7c6', 'b7b6', 'a7a6', 'f5f4', 'e5e4', 'h7h5', 'g7g5', 'c7c5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.6
+DEBUG: [Player2] AI's move = c7c5
+DEBUG: [Player2] AI's move_score = [0.21530208]
+
+Game analysis[from white's perspective] = 0.189
+
+### Board state number = 7, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ ♘ ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . . . .
+[5] . . ♙ ♕ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ ♞ . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2bnr/pp3kpp/8/2pqpp2/8/1QN2NP1/PP1PPP1P/R1B1KB1R w KQ - 0 7
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'c3d5', 'c3b5', 'c3e4', 'c3a4', 'c3d1', 'c3b1', 'b3b7', 'b3b6', 'b3d5', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3a3', 'b3c2', 'b3d1', 'h1g1', 'f1h3', 'f1g2', 'e1d1', 'a1b1', 'g3g4', 'h2h3', 'e2e3', 'd2d3', 'a2a3', 'h2h4', 'e2e4', 'd2d4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = c3d5
+DEBUG: [Player1] AI's move_score = 2.966230809688568
+
+Game analysis[from white's perspective] = 0.1915
+
+### Board state number = 7, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ ♘ ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . . . .
+[5] . . ♙ ♞ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2bnr/pp3kpp/8/2pNpp2/8/1Q3NP1/PP1PPP1P/R1B1KB1R b KQ - 0 7
+DEBUG: Legal moves = ['g8e7', 'g8h6', 'g8f6', 'f8e7', 'f8d6', 'c8d7', 'c8e6', 'b8d7', 'b8c6', 'b8a6', 'f7e8', 'f7g6', 'f7e6', 'h7h6', 'g7g6', 'b7b6', 'a7a6', 'f5f4', 'e5e4', 'c5c4', 'h7h5', 'g7g5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.6
+DEBUG: [Player2] AI's move = g8f6
+DEBUG: [Player2] AI's move_score = [0.52612656]
+
+Game analysis[from white's perspective] = 0.2135
+
+### Board state number = 8, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . ♘ . .
+[5] . . ♙ ♞ ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3kpp/5n2/2pNpp2/8/1Q3NP1/PP1PPP1P/R1B1KB1R w KQ - 1 8
+DEBUG: Legal moves = ['d5e7', 'd5c7', 'd5f6', 'd5b6', 'd5f4', 'd5b4', 'd5e3', 'd5c3', 'f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'b3b7', 'b3b6', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'h1g1', 'f1h3', 'f1g2', 'e1d1', 'a1b1', 'g3g4', 'h2h3', 'e2e3', 'd2d3', 'a2a3', 'h2h4', 'e2e4', 'd2d4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = d5f6
+DEBUG: [Player1] AI's move_score = 2.9488179683685303
+
+Game analysis[from white's perspective] = 0.1338
+
+### Board state number = 8, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . ♞ . .
+[5] . . ♙ . ♙ ♙ . .
+[4] . . . . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3kpp/5N2/2p1pp2/8/1Q3NP1/PP1PPP1P/R1B1KB1R b KQ - 0 8
+DEBUG: Legal moves = ['f7e7', 'f7g6', 'f7f6', 'c8e6', 'c5c4']
+INFO: it is a check.
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = c5c4
+DEBUG: [Player2] AI's move_score = [0.4046283]
+
+Game analysis[from white's perspective] = 0.2393
+
+### Board state number = 9, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . ♞ . .
+[5] . . . . ♙ ♙ . .
+[4] . . ♙ . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ . ♜
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3kpp/5N2/4pp2/2p5/1Q3NP1/PP1PPP1P/R1B1KB1R w KQ - 0 9
+DEBUG: Legal moves = ['f6g8', 'f6e8', 'f6h7', 'f6d7', 'f6h5', 'f6d5', 'f6g4', 'f6e4', 'f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'b3b7', 'b3b6', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'h1g1', 'f1h3', 'f1g2', 'e1d1', 'a1b1', 'g3g4', 'h2h3', 'e2e3', 'd2d3', 'a2a3', 'h2h4', 'e2e4', 'd2d4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = h1g1
+DEBUG: [Player1] AI's move_score = 2.9574888944625854
+
+Game analysis[from white's perspective] = 0.0502
+
+### Board state number = 9, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . ♞ . .
+[5] . . . . ♙ ♙ . .
+[4] . . ♙ . . . . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3kpp/5N2/4pp2/2p5/1Q3NP1/PP1PPP1P/R1B1KBR1 b Q - 1 9
+DEBUG: Legal moves = ['h8g8', 'f8e7', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'c8d7', 'c8e6', 'b8d7', 'b8c6', 'b8a6', 'f7e7', 'f7g6', 'f7f6', 'f7e6', 'g7f6', 'c4b3', 'h7h6', 'g7g6', 'b7b6', 'a7a6', 'f5f4', 'e5e4', 'h7h5', 'g7g5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = f5f4
+DEBUG: [Player2] AI's move_score = [0.43122]
+
+Game analysis[from white's perspective] = 0.2384
+
+### Board state number = 10, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . ♞ . .
+[5] . . . . ♙ . . .
+[4] . . ♙ . . ♙ . .
+[3] . ♛ . . . ♞ ♟ .
+[2] ♟ ♟ . ♟ ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3kpp/5N2/4p3/2p2p2/1Q3NP1/PP1PPP1P/R1B1KBR1 w Q - 0 10
+DEBUG: Legal moves = ['f6g8', 'f6e8', 'f6h7', 'f6d7', 'f6h5', 'f6d5', 'f6g4', 'f6e4', 'f3g5', 'f3e5', 'f3h4', 'f3d4', 'b3b7', 'b3b6', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'g1g2', 'g1h1', 'f1h3', 'f1g2', 'e1d1', 'a1b1', 'g3f4', 'g3g4', 'h2h3', 'e2e3', 'd2d3', 'a2a3', 'h2h4', 'e2e4', 'd2d4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:01.3
+DEBUG: [Player1] AI's move = d2d3
+DEBUG: [Player1] AI's move_score = 2.984880805015564
+
+Game analysis[from white's perspective] = 0.0634
+
+### Board state number = 10, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ ♙ ♙
+[6] . . . . . ♞ . .
+[5] . . . . ♙ . . .
+[4] . . ♙ . . ♙ . .
+[3] . ♛ . ♟ . ♞ ♟ .
+[2] ♟ ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3kpp/5N2/4p3/2p2p2/1Q1P1NP1/PP2PP1P/R1B1KBR1 b Q - 0 10
+DEBUG: Legal moves = ['h8g8', 'f8e7', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'c8d7', 'c8e6', 'c8f5', 'c8g4', 'c8h3', 'b8d7', 'b8c6', 'b8a6', 'f7e7', 'f7g6', 'f7f6', 'f7e6', 'g7f6', 'f4g3', 'c4b3', 'h7h6', 'g7g6', 'b7b6', 'a7a6', 'e5e4', 'h7h5', 'g7g5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:02.0
+DEBUG: [Player2] AI's move = g7f6
+DEBUG: [Player2] AI's move_score = [0.43052274]
+
+Game analysis[from white's perspective] = 0.158
+
+### Board state number = 11, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . . . . ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♙ . . ♙ . .
+[3] . ♛ . ♟ . ♞ ♟ .
+[2] ♟ ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3k1p/5p2/4p3/2p2p2/1Q1P1NP1/PP2PP1P/R1B1KBR1 w Q - 0 11
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3d2', 'b3b7', 'b3b6', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'g1g2', 'g1h1', 'f1h3', 'f1g2', 'e1d2', 'e1d1', 'c1f4', 'c1e3', 'c1d2', 'a1b1', 'g3f4', 'd3c4', 'g3g4', 'd3d4', 'h2h3', 'e2e3', 'a2a3', 'h2h4', 'e2e4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = g3f4
+DEBUG: [Player1] AI's move_score = 2.99508273601532
+
+Game analysis[from white's perspective] = 0.0249
+
+### Board state number = 11, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ ♘ ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . . . . ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♙ . . ♟ . .
+[3] . ♛ . ♟ . ♞ . .
+[2] ♟ ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = rnb2b1r/pp3k1p/5p2/4p3/2p2P2/1Q1P1N2/PP2PP1P/R1B1KBR1 b Q - 0 11
+DEBUG: Legal moves = ['h8g8', 'f8g7', 'f8e7', 'f8h6', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'c8d7', 'c8e6', 'c8f5', 'c8g4', 'c8h3', 'b8d7', 'b8c6', 'b8a6', 'f7e8', 'f7e7', 'f7e6', 'e5f4', 'c4b3', 'h7h6', 'b7b6', 'a7a6', 'f6f5', 'e5e4', 'h7h5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = b8c6
+DEBUG: [Player2] AI's move_score = [0.43989253]
+
+Game analysis[from white's perspective] = 0.1522
+
+### Board state number = 12, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . ♘ . . ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♙ . . ♟ . .
+[3] . ♛ . ♟ . ♞ . .
+[2] ♟ ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r1b2b1r/pp3k1p/2n2p2/4p3/2p2P2/1Q1P1N2/PP2PP1P/R1B1KBR1 w Q - 1 12
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3d2', 'b3b7', 'b3b6', 'b3b5', 'b3c4', 'b3b4', 'b3a4', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'g1g8', 'g1g7', 'g1g6', 'g1g5', 'g1g4', 'g1g3', 'g1g2', 'g1h1', 'f1h3', 'f1g2', 'e1d2', 'e1d1', 'c1e3', 'c1d2', 'a1b1', 'f4e5', 'd3c4', 'f4f5', 'd3d4', 'h2h3', 'e2e3', 'a2a3', 'h2h4', 'e2e4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = d3c4
+DEBUG: [Player1] AI's move_score = 2.9810712933540344
+
+Game analysis[from white's perspective] = 0.1534
+
+### Board state number = 12, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . ♗ . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . ♘ . . ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . .
+[3] . ♛ . . . ♞ . .
+[2] ♟ ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r1b2b1r/pp3k1p/2n2p2/4p3/2P2P2/1Q3N2/PP2PP1P/R1B1KBR1 b Q - 0 12
+DEBUG: Legal moves = ['h8g8', 'f8g7', 'f8e7', 'f8h6', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'c8d7', 'c8e6', 'c8f5', 'c8g4', 'c8h3', 'a8b8', 'f7e8', 'f7e7', 'f7e6', 'c6d8', 'c6b8', 'c6e7', 'c6a5', 'c6d4', 'c6b4', 'e5f4', 'h7h6', 'b7b6', 'a7a6', 'f6f5', 'e5e4', 'h7h5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = c8e6
+DEBUG: [Player2] AI's move_score = [0.28553212]
+
+Game analysis[from white's perspective] = 0.2047
+
+### Board state number = 13, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . . . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . ♘ . ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . .
+[3] . ♛ . . . ♞ . .
+[2] ♟ ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r4b1r/pp3k1p/2n1bp2/4p3/2P2P2/1Q3N2/PP2PP1P/R1B1KBR1 w Q - 1 13
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3d2', 'b3b7', 'b3b6', 'b3b5', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3a3', 'b3c2', 'b3d1', 'g1g8', 'g1g7', 'g1g6', 'g1g5', 'g1g4', 'g1g3', 'g1g2', 'g1h1', 'f1h3', 'f1g2', 'e1d2', 'e1d1', 'c1e3', 'c1d2', 'a1b1', 'f4e5', 'f4f5', 'c4c5', 'h2h3', 'e2e3', 'a2a3', 'h2h4', 'e2e4', 'a2a4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = a2a3
+DEBUG: [Player1] AI's move_score = 2.99474561214447
+
+Game analysis[from white's perspective] = 0.1613
+
+### Board state number = 13, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . . . . ♗ . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . ♘ . ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . .
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r4b1r/pp3k1p/2n1bp2/4p3/2P2P2/PQ3N2/1P2PP1P/R1B1KBR1 b Q - 0 13
+DEBUG: Legal moves = ['h8g8', 'f8g7', 'f8e7', 'f8h6', 'f8d6', 'f8c5', 'f8b4', 'f8a3', 'a8e8', 'a8d8', 'a8c8', 'a8b8', 'f7e8', 'f7e7', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'e6h3', 'c6d8', 'c6b8', 'c6e7', 'c6a5', 'c6d4', 'c6b4', 'e5f4', 'h7h6', 'b7b6', 'a7a6', 'f6f5', 'e5e4', 'h7h5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = f8d6
+DEBUG: [Player2] AI's move_score = [0.39731604]
+
+Game analysis[from white's perspective] = 0.1946
+
+### Board state number = 14, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . . . . . . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . ♘ ♗ ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . .
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . . ♟ ♟ . ♟
+[1] ♜ . ♝ . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r6r/pp3k1p/2nbbp2/4p3/2P2P2/PQ3N2/1P2PP1P/R1B1KBR1 w Q - 1 14
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3d2', 'b3b7', 'b3b6', 'b3b5', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3c2', 'b3a2', 'b3d1', 'g1g8', 'g1g7', 'g1g6', 'g1g5', 'g1g4', 'g1g3', 'g1g2', 'g1h1', 'f1h3', 'f1g2', 'e1d2', 'e1d1', 'c1e3', 'c1d2', 'a1a2', 'a1b1', 'f4e5', 'f4f5', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'h2h4', 'e2e4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = c1d2
+DEBUG: [Player1] AI's move_score = 2.9988284707069397
+
+Game analysis[from white's perspective] = 0.1575
+
+### Board state number = 14, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . . . . . . ♖
+[7] ♙ ♙ . . . ♔ . ♙
+[6] . . ♘ ♗ ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . .
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r6r/pp3k1p/2nbbp2/4p3/2P2P2/PQ3N2/1P1BPP1P/R3KBR1 b Q - 2 14
+DEBUG: Legal moves = ['h8g8', 'h8f8', 'h8e8', 'h8d8', 'h8c8', 'h8b8', 'a8g8', 'a8f8', 'a8e8', 'a8d8', 'a8c8', 'a8b8', 'f7f8', 'f7e8', 'f7e7', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'e6h3', 'd6f8', 'd6b8', 'd6e7', 'd6c7', 'd6c5', 'd6b4', 'd6a3', 'c6d8', 'c6b8', 'c6e7', 'c6a5', 'c6d4', 'c6b4', 'e5f4', 'h7h6', 'b7b6', 'a7a6', 'f6f5', 'e5e4', 'h7h5', 'b7b5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = b7b6
+DEBUG: [Player2] AI's move_score = [0.33237612]
+
+Game analysis[from white's perspective] = 0.1927
+
+### Board state number = 15, white
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . . . . . . ♖
+[7] ♙ . . . . ♔ . ♙
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . .
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ ♜ .
+
+
+DEBUG: board_play.fen() = r6r/p4k1p/1pnbbp2/4p3/2P2P2/PQ3N2/1P1BPP1P/R3KBR1 w Q - 0 15
+DEBUG: Legal moves = ['f3g5', 'f3e5', 'f3h4', 'f3d4', 'b3b6', 'b3b5', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3c2', 'b3a2', 'b3d1', 'd2a5', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'g1g8', 'g1g7', 'g1g6', 'g1g5', 'g1g4', 'g1g3', 'g1g2', 'g1h1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'f4e5', 'f4f5', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'h2h4', 'e2e4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = g1g4
+DEBUG: [Player1] AI's move_score = 2.997329354286194
+
+Game analysis[from white's perspective] = 0.0906
+
+### Board state number = 15, black
+
+   [a|b|c|d|e|f|g|h]
+[8] ♖ . . . . . . ♖
+[7] ♙ . . . . ♔ . ♙
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ ♜ .
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = r6r/p4k1p/1pnbbp2/4p3/2P2PR1/PQ3N2/1P1BPP1P/R3KB2 b Q - 1 15
+DEBUG: Legal moves = ['h8g8', 'h8f8', 'h8e8', 'h8d8', 'h8c8', 'h8b8', 'a8g8', 'a8f8', 'a8e8', 'a8d8', 'a8c8', 'a8b8', 'f7f8', 'f7e8', 'f7e7', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'd6f8', 'd6b8', 'd6e7', 'd6c7', 'd6c5', 'd6b4', 'd6a3', 'c6d8', 'c6b8', 'c6e7', 'c6a5', 'c6d4', 'c6b4', 'e5f4', 'h7h6', 'a7a6', 'f6f5', 'b6b5', 'e5e4', 'h7h5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = a8g8
+DEBUG: [Player2] AI's move_score = [0.10005341]
+
+Game analysis[from white's perspective] = 0.1707
+
+### Board state number = 16, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] ♙ . . . . ♔ . ♙
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ ♜ .
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/p4k1p/1pnbbp2/4p3/2P2PR1/PQ3N2/1P1BPP1P/R3KB2 w Q - 2 16
+DEBUG: Legal moves = ['g4g8', 'g4g7', 'g4g6', 'g4g5', 'g4h4', 'g4g3', 'g4g2', 'g4g1', 'f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'b3b6', 'b3b5', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3c2', 'b3a2', 'b3d1', 'd2a5', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'f4e5', 'f4f5', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'h2h4', 'e2e4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = g4h4
+DEBUG: [Player1] AI's move_score = 2.9991636276245117
+
+Game analysis[from white's perspective] = 0.1507
+
+### Board state number = 16, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] ♙ . . . . ♔ . ♙
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] . . . . ♙ . . .
+[4] . . ♟ . . ♟ . ♜
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/p4k1p/1pnbbp2/4p3/2P2P1R/PQ3N2/1P1BPP1P/R3KB2 b Q - 3 16
+DEBUG: Legal moves = ['g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'e6h3', 'd6f8', 'd6b8', 'd6e7', 'd6c7', 'd6c5', 'd6b4', 'd6a3', 'c6d8', 'c6b8', 'c6e7', 'c6a5', 'c6d4', 'c6b4', 'e5f4', 'h7h6', 'a7a6', 'f6f5', 'b6b5', 'e5e4', 'h7h5', 'a7a5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = a7a5
+DEBUG: [Player2] AI's move_score = [0.08902106]
+
+Game analysis[from white's perspective] = 0.1698
+
+### Board state number = 17, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . . . ♔ . ♙
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] ♙ . . . ♙ . . .
+[4] . . ♟ . . ♟ . ♜
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/5k1p/1pnbbp2/p3p3/2P2P1R/PQ3N2/1P1BPP1P/R3KB2 w Q - 0 17
+DEBUG: Legal moves = ['h4h7', 'h4h6', 'h4h5', 'h4g4', 'h4h3', 'f3g5', 'f3e5', 'f3d4', 'f3g1', 'b3b6', 'b3b5', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3c2', 'b3a2', 'b3d1', 'd2a5', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'f4e5', 'f4f5', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'e2e4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = f4e5
+DEBUG: [Player1] AI's move_score = 2.9996312856674194
+
+Game analysis[from white's perspective] = 0.1643
+
+### Board state number = 17, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . . . ♔ . ♙
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] ♙ . . . ♟ . . .
+[4] . . ♟ . . . . ♜
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/5k1p/1pnbbp2/p3P3/2P4R/PQ3N2/1P1BPP1P/R3KB2 b Q - 0 17
+DEBUG: Legal moves = ['g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'e6h3', 'd6f8', 'd6b8', 'd6e7', 'd6c7', 'd6e5', 'd6c5', 'd6b4', 'd6a3', 'c6d8', 'c6b8', 'c6e7', 'c6a7', 'c6e5', 'c6d4', 'c6b4', 'f6e5', 'h7h6', 'f6f5', 'b6b5', 'a5a4', 'h7h5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h7h5
+DEBUG: [Player2] AI's move_score = [0.32314384]
+
+Game analysis[from white's perspective] = 0.2223
+
+### Board state number = 18, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . . . ♔ . .
+[6] . ♙ ♘ ♗ ♗ ♙ . .
+[5] ♙ . . . ♟ . . ♙
+[4] . . ♟ . . . . ♜
+[3] ♟ ♛ . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/5k2/1pnbbp2/p3P2p/2P4R/PQ3N2/1P1BPP1P/R3KB2 w Q - 0 18
+DEBUG: Legal moves = ['h4h5', 'h4g4', 'h4f4', 'h4e4', 'h4d4', 'h4h3', 'f3g5', 'f3d4', 'f3g1', 'b3b6', 'b3b5', 'b3b4', 'b3a4', 'b3e3', 'b3d3', 'b3c3', 'b3c2', 'b3a2', 'b3d1', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'e5f6', 'e5d6', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'e2e4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = b3b6
+DEBUG: [Player1] AI's move_score = 2.999684691429138
+
+Game analysis[from white's perspective] = 0.2118
+
+### Board state number = 18, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . . . ♔ . .
+[6] . ♛ ♘ ♗ ♗ ♙ . .
+[5] ♙ . . . ♟ . . ♙
+[4] . . ♟ . . . . ♜
+[3] ♟ . . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/5k2/1Qnbbp2/p3P2p/2P4R/P4N2/1P1BPP1P/R3KB2 b Q - 0 18
+DEBUG: Legal moves = ['h8h7', 'h8h6', 'g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'e6h3', 'd6f8', 'd6b8', 'd6e7', 'd6c7', 'd6e5', 'd6c5', 'd6b4', 'd6a3', 'c6d8', 'c6b8', 'c6e7', 'c6a7', 'c6e5', 'c6d4', 'c6b4', 'f6e5', 'f6f5', 'a5a4']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = d6e5
+DEBUG: [Player2] AI's move_score = [0.6073905]
+
+Game analysis[from white's perspective] = 0.2163
+
+### Board state number = 19, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . . . ♔ . .
+[6] . ♛ ♘ . ♗ ♙ . .
+[5] ♙ . . . ♗ . . ♙
+[4] . . ♟ . . . . ♜
+[3] ♟ . . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/5k2/1Qn1bp2/p3b2p/2P4R/P4N2/1P1BPP1P/R3KB2 w Q - 0 19
+DEBUG: Legal moves = ['b6d8', 'b6b8', 'b6c7', 'b6b7', 'b6a7', 'b6c6', 'b6a6', 'b6c5', 'b6b5', 'b6a5', 'b6d4', 'b6b4', 'b6e3', 'b6b3', 'h4h5', 'h4g4', 'h4f4', 'h4e4', 'h4d4', 'h4h3', 'f3g5', 'f3e5', 'f3d4', 'f3g1', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'b2b3', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = b6a5
+DEBUG: [Player1] AI's move_score = 2.999570667743683
+
+Game analysis[from white's perspective] = 0.0813
+
+### Board state number = 19, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . . . ♔ . .
+[6] . . ♘ . ♗ ♙ . .
+[5] ♛ . . . ♗ . . ♙
+[4] . . ♟ . . . . ♜
+[3] ♟ . . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/5k2/2n1bp2/Q3b2p/2P4R/P4N2/1P1BPP1P/R3KB2 b Q - 0 19
+DEBUG: Legal moves = ['h8h7', 'h8h6', 'g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'e6c8', 'e6d7', 'e6f5', 'e6d5', 'e6g4', 'e6c4', 'e6h3', 'c6d8', 'c6b8', 'c6e7', 'c6a7', 'c6a5', 'c6d4', 'c6b4', 'e5b8', 'e5c7', 'e5d6', 'e5f4', 'e5d4', 'e5g3', 'e5c3', 'e5h2', 'e5b2', 'f6f5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = e6d7
+DEBUG: [Player2] AI's move_score = [0.48566303]
+
+Game analysis[from white's perspective] = 0.1945
+
+### Board state number = 20, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . ♗ . ♔ . .
+[6] . . ♘ . . ♙ . .
+[5] ♛ . . . ♗ . . ♙
+[4] . . ♟ . . . . ♜
+[3] ♟ . . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/3b1k2/2n2p2/Q3b2p/2P4R/P4N2/1P1BPP1P/R3KB2 w Q - 1 20
+DEBUG: Legal moves = ['a5d8', 'a5a8', 'a5c7', 'a5a7', 'a5b6', 'a5a6', 'a5e5', 'a5d5', 'a5c5', 'a5b5', 'a5b4', 'a5a4', 'a5c3', 'h4h5', 'h4g4', 'h4f4', 'h4e4', 'h4d4', 'h4h3', 'f3g5', 'f3e5', 'f3d4', 'f3g1', 'd2h6', 'd2g5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'b2b3', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = h4h5
+DEBUG: [Player1] AI's move_score = 2.9999430179595947
+
+Game analysis[from white's perspective] = 0.0823
+
+### Board state number = 20, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . ♗ . ♔ . .
+[6] . . ♘ . . ♙ . .
+[5] ♛ . . . ♗ . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/3b1k2/2n2p2/Q3b2R/2P5/P4N2/1P1BPP1P/R3KB2 b Q - 0 20
+DEBUG: Legal moves = ['h8h7', 'h8h6', 'h8h5', 'g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'f7e6', 'd7e8', 'd7c8', 'd7e6', 'd7f5', 'd7g4', 'd7h3', 'c6d8', 'c6b8', 'c6e7', 'c6a7', 'c6a5', 'c6d4', 'c6b4', 'e5b8', 'e5c7', 'e5d6', 'e5f4', 'e5d4', 'e5g3', 'e5c3', 'e5h2', 'e5b2', 'f6f5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = c6a5
+DEBUG: [Player2] AI's move_score = [0.359081]
+
+Game analysis[from white's perspective] = 0.0881
+
+### Board state number = 21, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . ♗ . ♔ . .
+[6] . . . . . ♙ . .
+[5] ♘ . . . ♗ . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♞ . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/3b1k2/5p2/n3b2R/2P5/P4N2/1P1BPP1P/R3KB2 w Q - 0 21
+DEBUG: Legal moves = ['h5h8', 'h5h7', 'h5h6', 'h5g5', 'h5f5', 'h5e5', 'h5h4', 'h5h3', 'f3g5', 'f3e5', 'f3h4', 'f3d4', 'f3g1', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'e2e3', 'b2b3', 'h2h4', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = f3e5
+DEBUG: [Player1] AI's move_score = 2.999979615211487
+
+Game analysis[from white's perspective] = 0.0852
+
+### Board state number = 21, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . ♗ . ♔ . .
+[6] . . . . . ♙ . .
+[5] ♘ . . . ♞ . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/3b1k2/5p2/n3N2R/2P5/P7/1P1BPP1P/R3KB2 b Q - 0 21
+DEBUG: Legal moves = ['f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7e6', 'f6e5']
+INFO: it is a check.
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = f6e5
+DEBUG: [Player2] AI's move_score = [0.6111229]
+
+Game analysis[from white's perspective] = 0.0867
+
+### Board state number = 22, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . ♗ . ♔ . .
+[6] . . . . . . . .
+[5] ♘ . . . ♙ . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/3b1k2/8/n3p2R/2P5/P7/1P1BPP1P/R3KB2 w Q - 0 22
+DEBUG: Legal moves = ['h5h8', 'h5h7', 'h5h6', 'h5g5', 'h5f5', 'h5e5', 'h5h4', 'h5h3', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'f2f3', 'e2e3', 'b2b3', 'h2h4', 'f2f4', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = h5e5
+DEBUG: [Player1] AI's move_score = 2.9999446868896484
+
+Game analysis[from white's perspective] = 0.0385
+
+### Board state number = 22, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ ♖
+[7] . . . ♗ . ♔ . .
+[6] . . . . . . . .
+[5] ♘ . . . ♜ . . .
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6rr/3b1k2/8/n3R3/2P5/P7/1P1BPP1P/R3KB2 b Q - 0 22
+DEBUG: Legal moves = ['h8h7', 'h8h6', 'h8h5', 'h8h4', 'h8h3', 'h8h2', 'g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7g7', 'f7g6', 'f7f6', 'd7e8', 'd7c8', 'd7e6', 'd7c6', 'd7f5', 'd7b5', 'd7g4', 'd7a4', 'd7h3', 'a5b7', 'a5c6', 'a5c4', 'a5b3']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h8h6
+DEBUG: [Player2] AI's move_score = [0.40935117]
+
+Game analysis[from white's perspective] = 0.1167
+
+### Board state number = 23, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ .
+[7] . . . ♗ . ♔ . .
+[6] . . . . . . . ♖
+[5] ♘ . . . ♜ . . .
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6r1/3b1k2/7r/n3R3/2P5/P7/1P1BPP1P/R3KB2 w Q - 1 23
+DEBUG: Legal moves = ['e5e8', 'e5e7', 'e5e6', 'e5h5', 'e5g5', 'e5f5', 'e5d5', 'e5c5', 'e5b5', 'e5a5', 'e5e4', 'e5e3', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'f2f3', 'e2e3', 'b2b3', 'h2h4', 'f2f4', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = e5a5
+DEBUG: [Player1] AI's move_score = 2.999981164932251
+
+Game analysis[from white's perspective] = 0.0988
+
+### Board state number = 23, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♖ .
+[7] . . . ♗ . ♔ . .
+[6] . . . . . . . ♖
+[5] ♜ . . . . . . .
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 6r1/3b1k2/7r/R7/2P5/P7/1P1BPP1P/R3KB2 b Q - 0 23
+DEBUG: Legal moves = ['g8h8', 'g8f8', 'g8e8', 'g8d8', 'g8c8', 'g8b8', 'g8a8', 'g8g7', 'g8g6', 'g8g5', 'g8g4', 'g8g3', 'g8g2', 'g8g1', 'f7f8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'f7f6', 'f7e6', 'd7e8', 'd7c8', 'd7e6', 'd7c6', 'd7f5', 'd7b5', 'd7g4', 'd7a4', 'd7h3', 'h6h8', 'h6h7', 'h6g6', 'h6f6', 'h6e6', 'h6d6', 'h6c6', 'h6b6', 'h6a6', 'h6h5', 'h6h4', 'h6h3', 'h6h2']
+[ExecutionTime] "(block)" = 00:00:01.6
+DEBUG: [Player2] AI's move = g8f8
+DEBUG: [Player2] AI's move_score = [0.6986913]
+
+Game analysis[from white's perspective] = 0.1708
+
+### Board state number = 24, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♖ . .
+[7] . . . ♗ . ♔ . .
+[6] . . . . . . . ♖
+[5] ♜ . . . . . . .
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 5r2/3b1k2/7r/R7/2P5/P7/1P1BPP1P/R3KB2 w Q - 1 24
+DEBUG: Legal moves = ['a5a8', 'a5a7', 'a5a6', 'a5h5', 'a5g5', 'a5f5', 'a5e5', 'a5d5', 'a5c5', 'a5b5', 'a5a4', 'd2h6', 'd2g5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'f2f3', 'e2e3', 'b2b3', 'h2h4', 'f2f4', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = a5h5
+DEBUG: [Player1] AI's move_score = 2.9999979734420776
+
+Game analysis[from white's perspective] = 0.0427
+
+### Board state number = 24, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♖ . .
+[7] . . . ♗ . ♔ . .
+[6] . . . . . . . ♖
+[5] . . . . . . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 5r2/3b1k2/7r/7R/2P5/P7/1P1BPP1P/R3KB2 b Q - 2 24
+DEBUG: Legal moves = ['f8h8', 'f8g8', 'f8e8', 'f8d8', 'f8c8', 'f8b8', 'f8a8', 'f7g8', 'f7e8', 'f7g7', 'f7e7', 'f7g6', 'f7f6', 'f7e6', 'd7e8', 'd7c8', 'd7e6', 'd7c6', 'd7f5', 'd7b5', 'd7g4', 'd7a4', 'd7h3', 'h6h8', 'h6h7', 'h6g6', 'h6f6', 'h6e6', 'h6d6', 'h6c6', 'h6b6', 'h6a6', 'h6h5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = f7g7
+DEBUG: [Player2] AI's move_score = [0.6387645]
+
+Game analysis[from white's perspective] = 0.1771
+
+### Board state number = 25, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♖ . .
+[7] . . . ♗ . . ♔ .
+[6] . . . . . . . ♖
+[5] . . . . . . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . .
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ ♝ . .
+
+
+DEBUG: board_play.fen() = 5r2/3b2k1/7r/7R/2P5/P7/1P1BPP1P/R3KB2 w Q - 3 25
+DEBUG: Legal moves = ['h5h6', 'h5g5', 'h5f5', 'h5e5', 'h5d5', 'h5c5', 'h5b5', 'h5a5', 'h5h4', 'h5h3', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'f1h3', 'f1g2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a3a4', 'h2h3', 'f2f3', 'e2e3', 'b2b3', 'h2h4', 'f2f4', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = f1h3
+DEBUG: [Player1] AI's move_score = 2.999999523162842
+
+Game analysis[from white's perspective] = 0.0702
+
+### Board state number = 25, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♖ . .
+[7] . . . ♗ . . ♔ .
+[6] . . . . . . . ♖
+[5] . . . . . . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . . . ♝
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 5r2/3b2k1/7r/7R/2P5/P6B/1P1BPP1P/R3K3 b Q - 4 25
+DEBUG: Legal moves = ['f8h8', 'f8g8', 'f8e8', 'f8d8', 'f8c8', 'f8b8', 'f8a8', 'f8f7', 'f8f6', 'f8f5', 'f8f4', 'f8f3', 'f8f2', 'g7h8', 'g7g8', 'g7h7', 'g7f7', 'g7g6', 'g7f6', 'd7e8', 'd7c8', 'd7e6', 'd7c6', 'd7f5', 'd7b5', 'd7g4', 'd7a4', 'd7h3', 'h6h8', 'h6h7', 'h6g6', 'h6f6', 'h6e6', 'h6d6', 'h6c6', 'h6b6', 'h6a6', 'h6h5']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = f8f3
+DEBUG: [Player2] AI's move_score = [0.86443865]
+
+Game analysis[from white's perspective] = 0.2334
+
+### Board state number = 26, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . ♗ . . ♔ .
+[6] . . . . . . . ♖
+[5] . . . . . . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♖ . ♝
+[2] . ♟ . ♝ ♟ ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 8/3b2k1/7r/7R/2P5/P4r1B/1P1BPP1P/R3K3 w Q - 5 26
+DEBUG: Legal moves = ['h5h6', 'h5g5', 'h5f5', 'h5e5', 'h5d5', 'h5c5', 'h5b5', 'h5a5', 'h5h4', 'h3d7', 'h3e6', 'h3f5', 'h3g4', 'h3g2', 'h3f1', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'e1f1', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'e2f3', 'c4c5', 'a3a4', 'e2e3', 'b2b3', 'e2e4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = e2f3
+DEBUG: [Player1] AI's move_score = 3.0
+
+Game analysis[from white's perspective] = 0.1386
+
+### Board state number = 26, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . ♗ . . ♔ .
+[6] . . . . . . . ♖
+[5] . . . . . . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♟ . ♝
+[2] . ♟ . ♝ . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 8/3b2k1/7r/7R/2P5/P4P1B/1P1B1P1P/R3K3 b Q - 0 26
+DEBUG: Legal moves = ['g7h8', 'g7g8', 'g7f8', 'g7h7', 'g7f7', 'g7g6', 'g7f6', 'd7e8', 'd7c8', 'd7e6', 'd7c6', 'd7f5', 'd7b5', 'd7g4', 'd7a4', 'd7h3', 'h6h8', 'h6h7', 'h6g6', 'h6f6', 'h6e6', 'h6d6', 'h6c6', 'h6b6', 'h6a6', 'h6h5']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = d7h3
+DEBUG: [Player2] AI's move_score = [0.9855973]
+
+Game analysis[from white's perspective] = 0.7118
+
+### Board state number = 27, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . ♔ .
+[6] . . . . . . . ♖
+[5] . . . . . . . ♜
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♟ . ♗
+[2] . ♟ . ♝ . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 8/6k1/7r/7R/2P5/P4P1b/1P1B1P1P/R3K3 w Q - 0 27
+DEBUG: Legal moves = ['h5h6', 'h5g5', 'h5f5', 'h5e5', 'h5d5', 'h5c5', 'h5b5', 'h5a5', 'h5h4', 'h5h3', 'd2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'e1e2', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'f3f4', 'a3a4', 'b2b3', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.9
+DEBUG: [Player1] AI's move = h5h3
+DEBUG: [Player1] AI's move_score = 2.9999996423721313
+
+Game analysis[from white's perspective] = 0.0894
+
+### Board state number = 27, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . ♔ .
+[6] . . . . . . . ♖
+[5] . . . . . . . .
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♟ . ♜
+[2] . ♟ . ♝ . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 8/6k1/7r/8/2P5/P4P1R/1P1B1P1P/R3K3 b Q - 0 27
+DEBUG: Legal moves = ['g7h8', 'g7g8', 'g7f8', 'g7h7', 'g7f7', 'g7g6', 'g7f6', 'h6h8', 'h6h7', 'h6g6', 'h6f6', 'h6e6', 'h6d6', 'h6c6', 'h6b6', 'h6a6', 'h6h5', 'h6h4', 'h6h3']
+[ExecutionTime] "(block)" = 00:00:02.1
+DEBUG: [Player2] AI's move = h6h3
+DEBUG: [Player2] AI's move_score = [0.99714464]
+
+Game analysis[from white's perspective] = 0.0941
+
+### Board state number = 28, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . ♔ .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] . . ♟ . . . . .
+[3] ♟ . . . . ♟ . ♖
+[2] . ♟ . ♝ . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 8/6k1/8/8/2P5/P4P1r/1P1B1P1P/R3K3 w Q - 0 28
+DEBUG: Legal moves = ['d2h6', 'd2g5', 'd2a5', 'd2f4', 'd2b4', 'd2e3', 'd2c3', 'd2c1', 'e1e2', 'e1f1', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'f3f4', 'a3a4', 'b2b3', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:01.1
+DEBUG: [Player1] AI's move = d2c3
+DEBUG: [Player1] AI's move_score = 2.999987244606018
+
+Game analysis[from white's perspective] = 0.092
+
+### Board state number = 28, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . ♔ .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] . . ♟ . . . . .
+[3] ♟ . ♝ . . ♟ . ♖
+[2] . ♟ . . . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 8/6k1/8/8/2P5/P1B2P1r/1P3P1P/R3K3 b Q - 1 28
+DEBUG: Legal moves = ['g7g8', 'g7f8', 'g7h7', 'g7f7', 'g7h6', 'g7g6']
+INFO: it is a check.
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = g7g8
+DEBUG: [Player2] AI's move_score = [0.9918988]
+
+Game analysis[from white's perspective] = 0.0946
+
+### Board state number = 29, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] . . ♟ . . . . .
+[3] ♟ . ♝ . . ♟ . ♖
+[2] . ♟ . . . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/8/2P5/P1B2P1r/1P3P1P/R3K3 w Q - 2 29
+DEBUG: Legal moves = ['c3h8', 'c3g7', 'c3f6', 'c3e5', 'c3a5', 'c3d4', 'c3b4', 'c3d2', 'e1e2', 'e1d2', 'e1f1', 'e1d1', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'f3f4', 'a3a4', 'b2b3', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = a3a4
+DEBUG: [Player1] AI's move_score = 2.999879240989685
+
+Game analysis[from white's perspective] = 0.0896
+
+### Board state number = 29, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . ♝ . . ♟ . ♖
+[2] . ♟ . . . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/8/P1P5/2B2P1r/1P3P1P/R3K3 b Q - 0 29
+DEBUG: Legal moves = ['g8f8', 'g8h7', 'g8f7', 'h3h8', 'h3h7', 'h3h6', 'h3h5', 'h3h4', 'h3g3', 'h3f3', 'h3h2']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h3f3
+DEBUG: [Player2] AI's move_score = [0.9870682]
+
+Game analysis[from white's perspective] = 0.0939
+
+### Board state number = 30, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . ♝ . . ♖ . .
+[2] . ♟ . . . ♟ . ♟
+[1] ♜ . . . ♚ . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/8/P1P5/2B2r2/1P3P1P/R3K3 w Q - 0 30
+DEBUG: Legal moves = ['c3h8', 'c3g7', 'c3f6', 'c3e5', 'c3a5', 'c3d4', 'c3b4', 'c3d2', 'e1e2', 'e1d2', 'e1f1', 'e1d1', 'a1a3', 'a1a2', 'a1d1', 'a1c1', 'a1b1', 'e1c1', 'c4c5', 'a4a5', 'h2h3', 'b2b3', 'h2h4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = e1d2
+DEBUG: [Player1] AI's move_score = 2.9997653365135193
+
+Game analysis[from white's perspective] = 0.0828
+
+### Board state number = 30, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . ♝ . . ♖ . .
+[2] . ♟ . ♚ . ♟ . ♟
+[1] ♜ . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/8/P1P5/2B2r2/1P1K1P1P/R7 b - - 1 30
+DEBUG: Legal moves = ['g8f8', 'g8h7', 'g8f7', 'f3f8', 'f3f7', 'f3f6', 'f3f5', 'f3f4', 'f3h3', 'f3g3', 'f3e3', 'f3d3', 'f3c3', 'f3f2']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = g8f8
+DEBUG: [Player2] AI's move_score = [0.98773384]
+
+Game analysis[from white's perspective] = 0.0955
+
+### Board state number = 31, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♔ . .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . ♝ . . ♖ . .
+[2] . ♟ . ♚ . ♟ . ♟
+[1] ♜ . . . . . . .
+
+
+DEBUG: board_play.fen() = 5k2/8/8/8/P1P5/2B2r2/1P1K1P1P/R7 w - - 2 31
+DEBUG: Legal moves = ['c3h8', 'c3g7', 'c3f6', 'c3e5', 'c3a5', 'c3d4', 'c3b4', 'd2e2', 'd2c2', 'd2e1', 'd2d1', 'd2c1', 'a1a3', 'a1a2', 'a1h1', 'a1g1', 'a1f1', 'a1e1', 'a1d1', 'a1c1', 'a1b1', 'c4c5', 'a4a5', 'h2h3', 'b2b3', 'h2h4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = a1a3
+DEBUG: [Player1] AI's move_score = 2.999956727027893
+
+Game analysis[from white's perspective] = 0.0814
+
+### Board state number = 31, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♔ . .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] ♜ . ♝ . . ♖ . .
+[2] . ♟ . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 5k2/8/8/8/P1P5/R1B2r2/1P1K1P1P/8 b - - 3 31
+DEBUG: Legal moves = ['f8g8', 'f8e8', 'f8f7', 'f8e7', 'f3f7', 'f3f6', 'f3f5', 'f3f4', 'f3h3', 'f3g3', 'f3e3', 'f3d3', 'f3c3', 'f3f2']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = f3h3
+DEBUG: [Player2] AI's move_score = [0.9916586]
+
+Game analysis[from white's perspective] = 0.6412
+
+### Board state number = 32, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♔ . .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] ♜ . ♝ . . . . ♖
+[2] . ♟ . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 5k2/8/8/8/P1P5/R1B4r/1P1K1P1P/8 w - - 4 32
+DEBUG: Legal moves = ['c3h8', 'c3g7', 'c3f6', 'c3e5', 'c3a5', 'c3d4', 'c3b4', 'a3b3', 'a3a2', 'a3a1', 'd2e2', 'd2c2', 'd2e1', 'd2d1', 'd2c1', 'c4c5', 'a4a5', 'f2f3', 'b2b3', 'f2f4', 'b2b4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = b2b3
+DEBUG: [Player1] AI's move_score = 2.9999665021896362
+
+Game analysis[from white's perspective] = 0.0848
+
+### Board state number = 32, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . ♔ . .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] ♜ ♟ ♝ . . . . ♖
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 5k2/8/8/8/P1P5/RPB4r/3K1P1P/8 b - - 0 32
+DEBUG: Legal moves = ['f8g8', 'f8e8', 'f8f7', 'f8e7', 'h3h8', 'h3h7', 'h3h6', 'h3h5', 'h3h4', 'h3g3', 'h3f3', 'h3e3', 'h3d3', 'h3c3', 'h3h2']
+[ExecutionTime] "(block)" = 00:00:01.6
+DEBUG: [Player2] AI's move = f8g8
+DEBUG: [Player2] AI's move_score = [0.9980179]
+
+Game analysis[from white's perspective] = 0.0967
+
+### Board state number = 33, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] ♜ ♟ ♝ . . . . ♖
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/8/P1P5/RPB4r/3K1P1P/8 w - - 1 33
+DEBUG: Legal moves = ['c3h8', 'c3g7', 'c3f6', 'c3e5', 'c3a5', 'c3d4', 'c3b4', 'c3b2', 'c3a1', 'a3a2', 'a3a1', 'd2e2', 'd2c2', 'd2e1', 'd2d1', 'd2c1', 'c4c5', 'a4a5', 'b3b4', 'f2f3', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = c3a5
+DEBUG: [Player1] AI's move_score = 2.9999109506607056
+
+Game analysis[from white's perspective] = 0.0843
+
+### Board state number = 33, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] ♜ ♟ . . . . . ♖
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/B7/P1P5/RP5r/3K1P1P/8 b - - 2 33
+DEBUG: Legal moves = ['g8h8', 'g8f8', 'g8h7', 'g8g7', 'g8f7', 'h3h8', 'h3h7', 'h3h6', 'h3h5', 'h3h4', 'h3g3', 'h3f3', 'h3e3', 'h3d3', 'h3c3', 'h3b3', 'h3h2']
+[ExecutionTime] "(block)" = 00:00:01.8
+DEBUG: [Player2] AI's move = h3b3
+DEBUG: [Player2] AI's move_score = [0.9852191]
+
+Game analysis[from white's perspective] = 0.6308
+
+### Board state number = 34, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] ♜ ♖ . . . . . .
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/B7/P1P5/Rr6/3K1P1P/8 w - - 0 34
+DEBUG: Legal moves = ['a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'a3b3', 'a3a2', 'a3a1', 'd2e2', 'd2c2', 'd2e1', 'd2d1', 'd2c1', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = a3b3
+DEBUG: [Player1] AI's move_score = 2.9999555349349976
+
+Game analysis[from white's perspective] = 0.74
+
+### Board state number = 34, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . ♜ . . . . . .
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/B7/P1P5/1R6/3K1P1P/8 b - - 0 34
+DEBUG: Legal moves = ['g8h8', 'g8f8', 'g8h7', 'g8g7', 'g8f7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = g8h8
+DEBUG: [Player2] AI's move_score = [0.99986756]
+
+Game analysis[from white's perspective] = 0.955
+
+### Board state number = 35, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . ♜ . . . . . .
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/B7/P1P5/1R6/3K1P1P/8 w - - 1 35
+DEBUG: Legal moves = ['a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'b3b8', 'b3b7', 'b3b6', 'b3b5', 'b3b4', 'b3h3', 'b3g3', 'b3f3', 'b3e3', 'b3d3', 'b3c3', 'b3a3', 'b3b2', 'b3b1', 'd2e3', 'd2d3', 'd2c3', 'd2e2', 'd2c2', 'd2e1', 'd2d1', 'd2c1', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = b3b5
+DEBUG: [Player1] AI's move_score = 2.9999985694885254
+
+Game analysis[from white's perspective] = 0.955
+
+### Board state number = 35, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ ♜ . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . . . . . . .
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/BR6/P1P5/8/3K1P1P/8 b - - 2 35
+DEBUG: Legal moves = ['h8g8', 'h8h7', 'h8g7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h8h7
+DEBUG: [Player2] AI's move_score = [0.9999715]
+
+Game analysis[from white's perspective] = 0.965
+
+### Board state number = 36, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . . ♔
+[6] . . . . . . . .
+[5] ♝ ♜ . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . . . . . . .
+[2] . . . ♚ . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 8/7k/8/BR6/P1P5/8/3K1P1P/8 w - - 3 36
+DEBUG: Legal moves = ['b5b8', 'b5b7', 'b5b6', 'b5h5', 'b5g5', 'b5f5', 'b5e5', 'b5d5', 'b5c5', 'b5b4', 'b5b3', 'b5b2', 'b5b1', 'a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'd2e3', 'd2d3', 'd2c3', 'd2e2', 'd2c2', 'd2e1', 'd2d1', 'd2c1', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:01.0
+DEBUG: [Player1] AI's move = d2d3
+DEBUG: [Player1] AI's move_score = 2.9999992847442627
+
+Game analysis[from white's perspective] = 0.96
+
+### Board state number = 36, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . . ♔
+[6] . . . . . . . .
+[5] ♝ ♜ . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 8/7k/8/BR6/P1P5/3K4/5P1P/8 b - - 4 36
+DEBUG: Legal moves = ['h7h8', 'h7g8', 'h7g7', 'h7h6', 'h7g6']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h7h8
+DEBUG: [Player2] AI's move_score = [0.9999728]
+
+Game analysis[from white's perspective] = 0.96
+
+### Board state number = 37, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ ♜ . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/BR6/P1P5/3K4/5P1P/8 w - - 5 37
+DEBUG: Legal moves = ['b5b8', 'b5b7', 'b5b6', 'b5h5', 'b5g5', 'b5f5', 'b5e5', 'b5d5', 'b5c5', 'b5b4', 'b5b3', 'b5b2', 'b5b1', 'a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'a5d2', 'a5e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = a5b4
+DEBUG: [Player1] AI's move_score = 2.9999998807907104
+
+Game analysis[from white's perspective] = 0.965
+
+### Board state number = 37, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . ♜ . . . . . .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/1R6/PBP5/3K4/5P1P/8 b - - 6 37
+DEBUG: Legal moves = ['h8g8', 'h8h7', 'h8g7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h8g8
+DEBUG: [Player2] AI's move_score = [0.99997747]
+
+Game analysis[from white's perspective] = 0.975
+
+### Board state number = 38, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . ♜ . . . . . .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/1R6/PBP5/3K4/5P1P/8 w - - 7 38
+DEBUG: Legal moves = ['b5b8', 'b5b7', 'b5b6', 'b5h5', 'b5g5', 'b5f5', 'b5e5', 'b5d5', 'b5c5', 'b5a5', 'b4f8', 'b4e7', 'b4d6', 'b4c5', 'b4a5', 'b4c3', 'b4a3', 'b4d2', 'b4e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'a4a5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = b5h5
+DEBUG: [Player1] AI's move_score = 2.9999998807907104
+
+Game analysis[from white's perspective] = 0.96
+
+### Board state number = 38, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . ♜
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/7R/PBP5/3K4/5P1P/8 b - - 8 38
+DEBUG: Legal moves = ['g8g7', 'g8f7']
+[ExecutionTime] "(block)" = 00:00:01.6
+DEBUG: [Player2] AI's move = g8g7
+DEBUG: [Player2] AI's move_score = [0.99997294]
+
+Game analysis[from white's perspective] = 0.96
+
+### Board state number = 39, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . ♔ .
+[6] . . . . . . . .
+[5] . . . . . . . ♜
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 8/6k1/8/7R/PBP5/3K4/5P1P/8 w - - 9 39
+DEBUG: Legal moves = ['h5h8', 'h5h7', 'h5h6', 'h5g5', 'h5f5', 'h5e5', 'h5d5', 'h5c5', 'h5b5', 'h5a5', 'h5h4', 'h5h3', 'b4f8', 'b4e7', 'b4d6', 'b4c5', 'b4a5', 'b4c3', 'b4a3', 'b4d2', 'b4e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'a4a5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = h5g5
+DEBUG: [Player1] AI's move_score = 2.9999998807907104
+
+Game analysis[from white's perspective] = 0.96
+
+### Board state number = 39, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . ♔ .
+[6] . . . . . . . .
+[5] . . . . . . ♜ .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 8/6k1/8/6R1/PBP5/3K4/5P1P/8 b - - 10 39
+DEBUG: Legal moves = ['g7h8', 'g7h7', 'g7f7', 'g7h6', 'g7f6']
+INFO: it is a check.
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = g7h8
+DEBUG: [Player2] AI's move_score = [0.99994874]
+
+Game analysis[from white's perspective] = 0.965
+
+### Board state number = 40, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . ♜ .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/6R1/PBP5/3K4/5P1P/8 w - - 11 40
+DEBUG: Legal moves = ['g5g8', 'g5g7', 'g5g6', 'g5h5', 'g5f5', 'g5e5', 'g5d5', 'g5c5', 'g5b5', 'g5a5', 'g5g4', 'g5g3', 'g5g2', 'g5g1', 'b4f8', 'b4e7', 'b4d6', 'b4c5', 'b4a5', 'b4c3', 'b4a3', 'b4d2', 'b4e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'a4a5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = g5g6
+DEBUG: [Player1] AI's move_score = 3.0
+
+Game analysis[from white's perspective] = 0.965
+
+### Board state number = 40, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . ♜ .
+[5] . . . . . . . .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/6R1/8/PBP5/3K4/5P1P/8 b - - 12 40
+DEBUG: Legal moves = ['h8h7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h8h7
+DEBUG: [Player2] AI's move_score = [0.9999778]
+
+Game analysis[from white's perspective] = 0.965
+
+### Board state number = 41, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . .
+[7] . . . . . . . ♔
+[6] . . . . . . ♜ .
+[5] . . . . . . . .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 8/7k/6R1/8/PBP5/3K4/5P1P/8 w - - 13 41
+DEBUG: Legal moves = ['g6g8', 'g6g7', 'g6h6', 'g6f6', 'g6e6', 'g6d6', 'g6c6', 'g6b6', 'g6a6', 'g6g5', 'g6g4', 'g6g3', 'g6g2', 'g6g1', 'b4f8', 'b4e7', 'b4d6', 'b4c5', 'b4a5', 'b4c3', 'b4a3', 'b4d2', 'b4e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'a4a5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = g6g8
+DEBUG: [Player1] AI's move_score = 2.999999761581421
+
+Game analysis[from white's perspective] = 0.6789
+
+### Board state number = 41, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♜ .
+[7] . . . . . . . ♔
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6R1/7k/8/8/PBP5/3K4/5P1P/8 b - - 14 41
+DEBUG: Legal moves = ['h7g8', 'h7h6']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h7g8
+DEBUG: [Player2] AI's move_score = [0.99986875]
+
+Game analysis[from white's perspective] = 0.945
+
+### Board state number = 42, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] . . . . . . . .
+[4] ♟ ♝ ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/8/PBP5/3K4/5P1P/8 w - - 0 42
+DEBUG: Legal moves = ['b4f8', 'b4e7', 'b4d6', 'b4c5', 'b4a5', 'b4c3', 'b4a3', 'b4d2', 'b4e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'a4a5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = b4a5
+DEBUG: [Player1] AI's move_score = 2.999977231025696
+
+Game analysis[from white's perspective] = 0.6286
+
+### Board state number = 42, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/B7/P1P5/3K4/5P1P/8 b - - 1 42
+DEBUG: Legal moves = ['g8h8', 'g8f8', 'g8h7', 'g8g7', 'g8f7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = g8h8
+DEBUG: [Player2] AI's move_score = [0.99890614]
+
+Game analysis[from white's perspective] = 0.94
+
+### Board state number = 43, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ . . . . .
+[3] . . . ♚ . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/B7/P1P5/3K4/5P1P/8 w - - 2 43
+DEBUG: Legal moves = ['a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'a5d2', 'a5e1', 'd3e4', 'd3d4', 'd3e3', 'd3c3', 'd3e2', 'd3d2', 'd3c2', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.8
+DEBUG: [Player1] AI's move = d3d4
+DEBUG: [Player1] AI's move_score = 2.9999983310699463
+
+Game analysis[from white's perspective] = 0.667
+
+### Board state number = 43, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/B7/P1PK4/8/5P1P/8 b - - 3 43
+DEBUG: Legal moves = ['h8g8', 'h8h7', 'h8g7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h8g8
+DEBUG: [Player2] AI's move_score = [0.9998536]
+
+Game analysis[from white's perspective] = 0.935
+
+### Board state number = 44, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/B7/P1PK4/8/5P1P/8 w - - 4 44
+DEBUG: Legal moves = ['a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'a5d2', 'a5e1', 'd4e5', 'd4d5', 'd4c5', 'd4e4', 'd4e3', 'd4d3', 'd4c3', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = a5b6
+DEBUG: [Player1] AI's move_score = 2.9999942779541016
+
+Game analysis[from white's perspective] = 0.905
+
+### Board state number = 44, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . ♝ . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/1B6/8/P1PK4/8/5P1P/8 b - - 5 44
+DEBUG: Legal moves = ['g8h8', 'g8f8', 'g8h7', 'g8g7', 'g8f7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = g8h8
+DEBUG: [Player2] AI's move_score = [0.9996698]
+
+Game analysis[from white's perspective] = 0.93
+
+### Board state number = 45, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . ♝ . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/1B6/8/P1PK4/8/5P1P/8 w - - 6 45
+DEBUG: Legal moves = ['b6d8', 'b6c7', 'b6a7', 'b6c5', 'b6a5', 'd4e5', 'd4d5', 'd4c5', 'd4e4', 'd4e3', 'd4d3', 'd4c3', 'c4c5', 'a4a5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = b6a5
+DEBUG: [Player1] AI's move_score = 2.9999983310699463
+
+Game analysis[from white's perspective] = 0.94
+
+### Board state number = 45, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 7k/8/8/B7/P1PK4/8/5P1P/8 b - - 7 45
+DEBUG: Legal moves = ['h8g8', 'h8h7', 'h8g7']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player2] AI's move = h8g8
+DEBUG: [Player2] AI's move_score = [0.9998536]
+
+Game analysis[from white's perspective] = 0.94
+
+### Board state number = 46, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . . . . . . . .
+[5] ♝ . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/8/B7/P1PK4/8/5P1P/8 w - - 8 46
+DEBUG: Legal moves = ['a5d8', 'a5c7', 'a5b6', 'a5b4', 'a5c3', 'a5d2', 'a5e1', 'd4e5', 'd4d5', 'd4c5', 'd4e4', 'd4e3', 'd4d3', 'd4c3', 'c4c5', 'h2h3', 'f2f3', 'h2h4', 'f2f4']
+[ExecutionTime] "(block)" = 00:00:00.2
+DEBUG: [Player1] AI's move = a5b6
+DEBUG: [Player1] AI's move_score = 2.9999942779541016
+
+Game analysis[from white's perspective] = 0.935
+
+### Board state number = 46, black
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . ♔ .
+[7] . . . . . . . .
+[6] . ♝ . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+DEBUG: board_play.fen() = 6k1/8/1B6/8/P1PK4/8/5P1P/8 b - - 9 46
+DEBUG: Legal moves = ['g8h8', 'g8f8', 'g8h7', 'g8g7', 'g8f7']
+[ExecutionTime] "(block)" = 00:00:00.4
+DEBUG: [Player2] AI's move = g8h8
+DEBUG: [Player2] AI's move_score = [0.9996698]
+
+Game analysis[from white's perspective] = 0.935
+
+
+
+### Board state number = 47, white
+
+   [a|b|c|d|e|f|g|h]
+[8] . . . . . . . ♔
+[7] . . . . . . . .
+[6] . ♝ . . . . . .
+[5] . . . . . . . .
+[4] ♟ . ♟ ♚ . . . .
+[3] . . . . . . . .
+[2] . . . . . ♟ . ♟
+[1] . . . . . . . .
+
+
+RESULTS: draw, due to three fold repetition
+
+
+Game moves list:
+['g1f3', 'd7d5', 'c2c4', 'e7e5', 'c4d5', 'f7f5', 'g2g3', 'e8f7', 'd1b3', 'd8d5', 'b1c3', 'c7c5', 'c3d5', 'g8f6', 'd5f6', 'c5c4', 'h1g1', 'f5f4', 'd2d3', 'g7f6', 'g3f4', 'b8c6', 'd3c4', 'c8e6', 'a2a3', 'f8d6', 'c1d2', 'b7b6', 'g1g4', 'a8g8', 'g4h4', 'a7a5', 'f4e5', 'h7h5', 'b3b6', 'd6e5', 'b6a5', 'e6d7', 'h4h5', 'c6a5', 'f3e5', 'f6e5', 'h5e5', 'h8h6', 'e5a5', 'g8f8', 'a5h5', 'f7g7', 'f1h3', 'f8f3', 'e2f3', 'd7h3', 'h5h3', 'h6h3', 'd2c3', 'g7g8', 'a3a4', 'h3f3', 'e1d2', 'g8f8', 'a1a3', 'f3h3', 'b2b3', 'f8g8', 'c3a5', 'h3b3', 'a3b3', 'g8h8', 'b3b5', 'h8h7', 'd2d3', 'h7h8', 'a5b4', 'h8g8', 'b5h5', 'g8g7', 'h5g5', 'g7h8', 'g5g6', 'h8h7', 'g6g8', 'h7g8', 'b4a5', 'g8h8', 'd3d4', 'h8g8', 'a5b6', 'g8h8', 'b6a5', 'h8g8', 'a5b6', 'g8h8']
+
+Closing the connection with the engine...
+Connection closed.
+(fm) ➜  code 

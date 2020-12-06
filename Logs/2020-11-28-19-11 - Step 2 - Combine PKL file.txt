@@ -1,0 +1,179 @@
+(base) ➜  Chess-Force-CNN conda activate fm
+(fm) ➜  Chess-Force-CNN cd code          
+(fm) ➜  code    DATA_PATH='../../Chess-Force-CNN-Dataset'            # EDIT this so that it points to the directory used for storing all the CSV data files used for training/testing/playing
+   CSV_SCORES_PATH="${DATA_PATH}/03_csv_score_data"
+   CSV_SCORES_PATH_CONVERTED="${DATA_PATH}/03_csv_score_data_converted"
+   PKL_PATH="${DATA_PATH}/04_pkl_data"
+   PKL_PATH_COMBINED="${DATA_PATH}/04_pkl_data_combined"
+   PKL_PATH_TRAINED="${DATA_PATH}/04_pkl_data_trained"
+(fm) ➜  code    WEIGHTS_SAVE_PATH="../../Chess-Force-Models"
+   
+   MODEL_NAME_PREFIX="cnn"  # Change this prefix based on the model being used
+   EPOCHS=4  # Can update this anytime before execution
+
+(fm) ➜  code    python step_03b_train.py train                          \
+       --gpu=0                                             \
+       --builder_model=7                                   \
+       --board_encoder=01588                               \
+       --version_number=0                                  \
+       --epochs=${EPOCHS}                                  \
+       --batch_size=8192                                   \
+       --validation_split=0.2                              \
+       --generate_model_image                              \
+       --input_dir="${PKL_PATH_COMBINED}"                  \
+       --move_dir="${PKL_PATH_TRAINED}"                    \
+       --file_suffix="pkl"                                 \
+       --y_normalizer=7                                    \
+       --callback                                          \
+       --name_prefix="${MODEL_NAME_PREFIX}"                \
+       --saved_weights_file="${SAVED_WEIGHTS_FILE}"        \
+       --auto_load_new                                     \
+       --weights_save_path="${WEIGHTS_SAVE_PATH}"          \
+       && mv "${PKL_PATH_TRAINED}/"*.pkl "${PKL_PATH_COMBINED}"
+
+
+{'--auto_load_new': True,
+ '--batch_size': '8192',
+ '--board_encoder': '01588',
+ '--builder_model': '7',
+ '--callback': True,
+ '--epochs': '4',
+ '--file_suffix': 'pkl',
+ '--generate_model_image': True,
+ '--gpu': '0',
+ '--help': False,
+ '--input_dir': '../../Chess-Force-CNN-Dataset/04_pkl_data_combined',
+ '--move_dir': '../../Chess-Force-CNN-Dataset/04_pkl_data_trained',
+ '--name_prefix': 'cnn',
+ '--saved_weights_file': '',
+ '--validation_split': '0.2',
+ '--version': False,
+ '--version_number': '0',
+ '--weights_save_path': '../../Chess-Force-Models',
+ '--y_normalizer': '7',
+ 'get_available_gpus': False,
+ 'get_options_models': False,
+ 'train': True}
+
+
+Saving the image: 'ffnn_keras-cnn-mg007-be01588-sn000-ep00004-weight-v000.h5_004.png'
+WARNING: auto_load_new: failed
+
+  0%|                                                                         | 0/1 [00:00<?, ?it/s]Input files = 1
+Processed files = 0
+File: all_combined.pkl:   0%|                                                 | 0/1 [00:00<?, ?it/s]
+
+Epoch 1/4
+
+Epoch 00001: val_loss improved from inf to 0.67943, saving model to ../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001_ep00001-vl0.67943.h5
+2836/2836 - 809s - loss: 0.7060 - accuracy: 0.7009 - val_loss: 0.6794 - val_accuracy: 0.7185
+Epoch 2/4
+
+Epoch 00002: val_loss improved from 0.67943 to 0.62598, saving model to ../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001_ep00002-vl0.62598.h5
+2836/2836 - 792s - loss: 0.6207 - accuracy: 0.7476 - val_loss: 0.6260 - val_accuracy: 0.7458
+Epoch 3/4
+
+Epoch 00003: val_loss improved from 0.62598 to 0.61783, saving model to ../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001_ep00003-vl0.61783.h5
+2836/2836 - 791s - loss: 0.5716 - accuracy: 0.7719 - val_loss: 0.6178 - val_accuracy: 0.7497
+Epoch 4/4
+
+Epoch 00004: val_loss improved from 0.61783 to 0.61347, saving model to ../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001_ep00004-vl0.61347.h5
+2836/2836 - 790s - loss: 0.5404 - accuracy: 0.7868 - val_loss: 0.6135 - val_accuracy: 0.7562
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg007-be01588-sn000-ep00008-weight-v001.h5
+File: all_combined.pkl: 100%|███████████████████████████████████████| 1/1 [54:02<00:00, 3242.53s/it]
+
+
+Model training finished :)
+
+
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg007-be01588-sn000-ep00008-weight-v001.h5
+(fm) ➜  code 
+(fm) ➜  code 
+(fm) ➜  code 
+(fm) ➜  code 
+(fm) ➜  code    SAVED_WEIGHTS_FILE="../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001.h5"
+
+(fm) ➜  code    python step_03b_train.py train                          \
+       --gpu=0                                             \
+       --builder_model=7                                   \
+       --board_encoder=01588                               \
+       --version_number=0                                  \
+       --epochs=${EPOCHS}                                  \
+       --batch_size=8192                                   \
+       --validation_split=0.2                              \
+       --generate_model_image                              \
+       --input_dir="${PKL_PATH_COMBINED}"                  \
+       --move_dir="${PKL_PATH_TRAINED}"                    \
+       --file_suffix="pkl"                                 \
+       --y_normalizer=7                                    \
+       --callback                                          \
+       --name_prefix="${MODEL_NAME_PREFIX}"                \
+       --saved_weights_file="${SAVED_WEIGHTS_FILE}"        \
+       --auto_load_new                                     \
+       --weights_save_path="${WEIGHTS_SAVE_PATH}"          \
+       && mv "${PKL_PATH_TRAINED}/"*.pkl "${PKL_PATH_COMBINED}"
+
+
+{'--auto_load_new': True,
+ '--batch_size': '8192',
+ '--board_encoder': '01588',
+ '--builder_model': '7',
+ '--callback': True,
+ '--epochs': '4',
+ '--file_suffix': 'pkl',
+ '--generate_model_image': True,
+ '--gpu': '0',
+ '--help': False,
+ '--input_dir': '../../Chess-Force-CNN-Dataset/04_pkl_data_combined',
+ '--move_dir': '../../Chess-Force-CNN-Dataset/04_pkl_data_trained',
+ '--name_prefix': 'cnn',
+ '--saved_weights_file': '../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001.h5',
+ '--validation_split': '0.2',
+ '--version': False,
+ '--version_number': '0',
+ '--weights_save_path': '../../Chess-Force-Models',
+ '--y_normalizer': '7',
+ 'get_available_gpus': False,
+ 'get_options_models': False,
+ 'train': True}
+
+
+Saving the image: 'ffnn_keras-cnn-mg007-be01588-sn000-ep00004-weight-v000.h5_005.png'
+INFO: auto_load_new: Trying
+INFO: auto_load_new: loading: '../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001.h5'
+Model weights successfully loaded: cnn-mg007-be01588-sn000-ep00008-weight-v001.h5
+INFO: auto_load_new: Model loaded :)
+
+  0%|                                                                         | 0/1 [00:00<?, ?it/s]Input files = 1
+Processed files = 0
+File: all_combined.pkl:   0%|                                                 | 0/1 [00:00<?, ?it/s]
+
+Epoch 1/4
+
+Epoch 00001: val_loss improved from inf to 0.61156, saving model to ../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00012-weight-v001_ep00001-vl0.61156.h5
+2836/2836 - 809s - loss: 0.5163 - accuracy: 0.7981 - val_loss: 0.6116 - val_accuracy: 0.7576
+Epoch 2/4
+
+Epoch 00002: val_loss did not improve from 0.61156
+2836/2836 - 790s - loss: 0.4927 - accuracy: 0.8088 - val_loss: 0.6216 - val_accuracy: 0.7573
+Epoch 3/4
+
+Epoch 00003: val_loss did not improve from 0.61156
+2836/2836 - 791s - loss: 0.4726 - accuracy: 0.8176 - val_loss: 0.6257 - val_accuracy: 0.7579
+Epoch 4/4
+
+Epoch 00004: val_loss did not improve from 0.61156
+2836/2836 - 791s - loss: 0.4545 - accuracy: 0.8256 - val_loss: 0.6410 - val_accuracy: 0.7533
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg007-be01588-sn000-ep00012-weight-v001.h5
+File: all_combined.pkl: 100%|███████████████████████████████████████| 1/1 [54:01<00:00, 3241.94s/it]
+
+
+Model training finished :)
+
+
+Path: ../../Chess-Force-Models
+Model weights successfully saved: cnn-mg007-be01588-sn000-ep00012-weight-v001.h5
+(fm) ➜  code 
