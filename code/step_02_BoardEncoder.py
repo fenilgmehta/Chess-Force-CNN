@@ -170,14 +170,14 @@ class BoardEncoder:
             # )
 
     @staticmethod
-    def get_uniqstr_to_classobj(uniq_str: str):
+    def get_uniqstr_to_classobj(uniq_str: str) -> EncodeBase:
         for i in cs.get_class_common_prefixed(BoardEncoder, prefix_to_search="Encode_"):
             if uniq_str == eval("BoardEncoder." + i).UNIQ_NAME_5:
                 return eval("BoardEncoder." + i)
         return None
 
     @staticmethod
-    def get_all_uniq_name():
+    def get_all_uniq_name() -> List[str]:
         return [
             eval("BoardEncoder." + i).UNIQ_NAME_5
             for i in cs.get_class_common_prefixed(BoardEncoder, prefix_to_search="Encode_")

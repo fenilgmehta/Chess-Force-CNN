@@ -67,7 +67,7 @@ def train_on_folder(keras_obj: step_03a.NNKeras,
     training_files = sorted(Path(input_dir).glob(f"*{file_suffix}"))
     # The order of training files is shuffled randomly so that the model does not get biased
     random.shuffle(training_files)
-    with tqdm(training_files) as t:
+    with tqdm(training_files, ncols=100) as t:
         print(f"Input files = {len(training_files)}")
         print(f"Processed files = {len(list(Path(move_dir).glob(f'*{file_suffix}')))}")
         if len(list(Path(input_dir).glob("*"))) > 0 and len(list(Path(move_dir).glob("*"))) == 0:
@@ -76,6 +76,7 @@ def train_on_folder(keras_obj: step_03a.NNKeras,
 
         for ith_file in t:
             t.set_description(desc=f"File: {Path(ith_file).name}", refresh=True)
+            print("\n")
             train_on_file(keras_obj=keras_obj,
                           file_path=str(ith_file),
                           data_load_transform=data_load_transform,
@@ -169,7 +170,6 @@ def train(gpu_id: int,
         return
 
     data_load_transform = None
-    y_normalizer_obj: Union[Callable[[np.ndarray], np.ndarray], None] = None
 
     if file_suffix == 'csv':
         data_load_transform = pd.read_csv
@@ -186,9 +186,15 @@ def train(gpu_id: int,
     elif gpu_id != -1:
         print(f"WARNING: Invalid parameter for `gpu_id={gpu_id}`, using CPU for training")
 
-    for i in step_02.ScoreNormalizer.get_all_SN_suffix_str():
-        if int(y_normalizer) == int(i):
-            y_normalizer_obj = step_02.ScoreNormalizer.num_to_method(int(i))
+    y_normalizer_obj: Union[Callable[[np.ndarray], np.ndarray], None] = None
+    if (y_normalizer != "None") and (y_normalizer is not None):
+        try:
+            for i in step_02.ScoreNormalizer.get_all_SN_suffix_str():
+                if int(y_normalizer) == int(i):
+                    y_normalizer_obj = step_02.ScoreNormalizer.num_to_method(int(i))
+                    break
+        except Exception as e:
+            print(f"EXCEPTION: {type(e)}: {e}")
     if y_normalizer_obj == step_02.ScoreNormalizer.normalize_000:
         y_normalizer_obj = None
 
@@ -199,7 +205,7 @@ def train(gpu_id: int,
         print(f"WARNING: Invalid parameter for `y_normalizer={y_normalizer}`, using default value `y_normalizer=None`")
 
     ffnn_keras_obj: step_03a.NNKeras = step_03a.NNBuilder.build_from_model_version(
-        step_03a.ModelVersion(name_prefix, builder_model, board_encoder, 0, epochs, 'weight', version_number, 'h5'),
+        step_03a.ModelVersion(name_prefix, builder_model, board_encoder, int(y_normalizer), epochs, 'weight', version_number, 'h5'),
         callback,
         generate_model_image
     )
@@ -249,10 +255,12 @@ if __name__ == '__main__':
     Usage:
         step_03b_train.py get_available_gpus
         step_03b_train.py train \
---gpu=N --builder_model=N --board_encoder=N [--version_number=N] --epochs=N --batch_size=N --validation_split=FLOAT [--generate_model_image] \
+--gpu=N --builder_model=N --board_encoder=N [--version_number=N] --epochs=N \
+--batch_size=N --validation_split=FLOAT [--generate_model_image] \
 --input_dir=PATH --move_dir=PATH --file_suffix=STR --y_normalizer=STR \
 [--callback] --name_prefix=STR [--auto_load_new] --saved_weights_file=PATH \
 --weights_save_path=PATH
+        step_03b_train.py get_options_models
         step_03b_train.py (-h | --help)
         step_03b_train.py --version
 
@@ -303,9 +311,41 @@ if __name__ == '__main__':
     #              '--y_normalizer': '004',
     #              'get_available_gpus': False,
     #              'train': True}
+    # arguments = {'--auto_load_new': False,
+    #     '--batch_size': '8192',
+    #     '--board_encoder': '01588',
+    #     '--builder_model': '7',
+    #     '--callback': True,
+    #     '--epochs': '4',
+    #     '--file_suffix': 'pkl',
+    #     '--generate_model_image': False,
+    #     '--gpu': '0',
+    #     '--help': False,
+    #     '--input_dir': '../../Chess-Force-CNN-Dataset/04_pkl_data_combined',
+    #     '--move_dir': '../../Chess-Force-CNN-Dataset/04_pkl_data_trained',
+    #     '--name_prefix': 'cnn',
+    #     '--saved_weights_file': '',
+    #     '--validation_split': '0.2',
+    #     '--version': False,
+    #     '--version_number': '0',
+    #     '--weights_save_path': '../../Chess-Force-Models',
+    #     '--y_normalizer': '7',
+    #     'get_available_gpus': False,
+    #     'get_options_models': False,
+    #     'train': True}
+
 
     if arguments['get_available_gpus']:
         print(get_available_gpus())
+    elif arguments['get_options_models']:
+        custom_obj_str = [
+            int(i.lstrip("model_")) 
+                for i in cs.get_class_common_prefixed(
+                    step_03a.KerasModels,
+                    prefix_to_search='model_'
+                )
+        ] 
+        print(f"KerasModels = {custom_obj_str}")
     elif arguments['train']:
         train(int(arguments['--gpu']),
               int(arguments['--builder_model']),

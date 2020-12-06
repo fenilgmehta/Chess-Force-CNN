@@ -23,22 +23,38 @@ import step_03a_ffnn as step_03a
 # This is for prediction
 class ChessPredict:
     def __init__(self,
-                 function_to_predict_1_board=None, function_to_predict_n_board=None, to_maximize=True,
+                 function_to_predict_1_board=None, function_to_predict_n_board=None, to_maximize: bool = True,
                  predict_move_1=None,
                  analyse_board=None):
+        """
+        Users of ChessPredict:  Neural Network Model to play  /  Chess Engine to play  /  Chess Engine to analyse board
+
+        Possible combinations of parameters:
+            1. function_to_predict_1_board, function_to_predict_n_board
+            2. predict_move_1
+            3. analyse_board
+
+        function_to_predict_1_board : Neural Network Model to play
+        function_to_predict_n_board : Neural Network Model to play
+        to_maximize    : tells whether to play for White (i.e. Maximise) or Black (i.e. Minimise)
+        predict_move_1 : used by ChessEngine object to play ---> "stock_fish_engine.predict_move"
+        analyse_board  : this is a function of ChessEngine to analyse the board ---> "stock_fish_engine.evaluate_normalized_board"
+                         Whenever this is set in the constructor, nothing else will be used that object
+        """
         if function_to_predict_1_board is not None:
             assert isinstance(function_to_predict_1_board, collections.abc.Callable), '`function_to_predict_1_board` must be callable'
         if function_to_predict_n_board is not None:
             assert isinstance(function_to_predict_n_board, collections.abc.Callable), '`function_to_predict_n_board` must be callable'
-        assert isinstance(to_maximize, bool), '`predict_move_1` must be bool'
+        assert isinstance(to_maximize, bool), '`to_maximize` must be bool'
         if predict_move_1 is not None:
             assert isinstance(predict_move_1, collections.abc.Callable), '`predict_move_1` must be callable'
 
         self.function_to_predict_1 = function_to_predict_1_board
         self.function_to_predict_n = function_to_predict_n_board
-        self.predict_move_1 = predict_move_1
-        self.analyse_board = analyse_board
         self.to_maximize = to_maximize
+        self.predict_move_1 = predict_move_1
+
+        self.analyse_board = analyse_board
 
         self.__initial_score = float(((-1) ** to_maximize) * (2 ** 30))
         self.__compare = None
@@ -61,14 +77,40 @@ class ChessPredict:
         """
         Returns centi-pawn score for all the boards passed to it.
 
-        :return: np.array
+        :return: np.array (1-D array)
         """
         predictions = self.function_to_predict_n(boards)
         if len(predictions.shape) == 1:
             return predictions
         if predictions.shape[1] == 2:
             return predictions[:, 1:2]
-        return predictions
+        # TODO: implement technique to convert one hot prediction to one float value
+        #       use argmax(2d matrix, axis=1), add probability to this value
+        #       ASSUMPTION: 
+        #           if target classes is even ---> then (classes of black) == (classes of white)
+        #                             is odd  ---> then (classes of black) == (classes of white - 1)
+        #           first column means chances of white winning is least, that of black is max
+        #           second column means chances of white winning is more than the previous column, that of black is little less than the previous column
+        #           third column ...
+        # 
+        # [-2 ,-1, 1, 2]
+        # 
+        # 0   =  -2 = [1, 0, 0, 0]
+        # 1   =  -1 = [0, 1, 0, 0]
+        # 2   =   1 = [0, 0, 1, 0]
+        # 3   =   2 = [0, 0, 0, 1]
+        # 
+        # [0.7, 0.1,      0.1, 0.1]  sum = -2   --> -2 -0.7  == -2.7
+        # [0.6, 0.1,      0.1, 0.2]  sum = -2   --> -2 -0.6  == -2.6
+        # 
+        # [0.2, 0.1, 0.6, 0.1]  sum = 1   --> 1 + 0.6 == 1.6
+        # [0.1, 0.1, 0.7, 0.1]  sum = 1   --> 1 + 0.7 == 1.7
+        # 
+        # REFER: np.where ---> https://stackoverflow.com/questions/20672478/convert-a-numpy-boolean-array-to-int-one-with-distinct-values
+        target_label_count = predictions.shape[1]
+        ydash = np.argmax(predictions, axis=1)
+        return ydash + np.where(ydash >= (target_label_count // 2), 1, -1) * np.max(predictions, axis=1)
+        # return predictions
 
     def predict_best_move_v1(self, board: chess.Board) -> Tuple[chess.Move, np.float]:
         """
@@ -135,7 +177,8 @@ class ChessPredict:
         if self.predict_score_1 is not None:
             return self.predict_best_move_v1(board)
         raise NotImplementedError(
-            "Neither of the prediction methods are given to ChessPredict: predict_score_1, predict_score_n, predict_move_1")
+            "Neither of the prediction methods are given to ChessPredict: predict_score_1, predict_score_n, predict_move_1"
+        )
 
     def get_next_move(self, board: chess.Board):
         if self.predict_move_1 is not None:
@@ -303,18 +346,18 @@ def init_engine(cpu_cores=1, analyse_time=0.01):
     return engine_sf
 
 
-def play(player1_name: str, player2_name: str, game_type: str, model_weights_file: str, analyze_game: bool = False, clear_screen=False,
+def play(player1_name: str, player2_name: str, game_type: str, model_weights_file: str, model_weights_file2: Union[str, None] = None, analyze_game: bool = False, clear_screen=False,
          delay=0.0, ):
     ffnn_keras, engine_sf, engine_predict = None, None, None
 
-    def init_model():
+    def init_model(model_to_use = model_weights_file):
         # mv = step_03a.ModelVersion.create_obj(Path(model_weights_file).name)
         # if mv.model_generator == 4:
         #     ffnn_keras = step_03a.NNBuilder.build_004(name_prefix='', version=1, callback=False, generate_model_image=False)
         # else:
         #     ffnn_keras = step_03a.NNBuilder.build_005(name_prefix='', version=1, callback=False, generate_model_image=False)
-        ffnn_keras = step_03a.NNBuilder.build(Path(model_weights_file).name)
-        ffnn_keras.c_load_weights(model_weights_file, ".")
+        ffnn_keras = step_03a.NNBuilder.build(Path(model_to_use).name)
+        ffnn_keras.c_load_weights(model_to_use, ".")
         return ffnn_keras
 
     player1_chess_predict, player2_chess_predict = None, None
@@ -335,7 +378,11 @@ def play(player1_name: str, player2_name: str, game_type: str, model_weights_fil
         return
 
     if game_type[1] == 'm':
-        player2_chess_predict = ChessPredict(ffnn_keras.c_predict_board_1, ffnn_keras.c_predict_board_n, to_maximize=False)
+        if game_type[0] == 'm' and (model_weights_file2 is not None):
+            ffnn_keras = init_model(model_weights_file2)
+            player2_chess_predict = ChessPredict(ffnn_keras.c_predict_board_1, ffnn_keras.c_predict_board_n, to_maximize=False)
+        else:
+            player2_chess_predict = ChessPredict(ffnn_keras.c_predict_board_1, ffnn_keras.c_predict_board_n, to_maximize=False)
     elif game_type[1] == 'e':
         player2_chess_predict = ChessPredict(predict_move_1=engine_sf.predict_move, to_maximize=True)
     elif game_type[1] == 'h':
@@ -390,12 +437,12 @@ def predict_move(input_dir: str, output_dir: str, move_dir: str, model_weights_f
         print(f"ERROR: Invalid model_weights_file={model_weights_file}", flush=True)
         return
 
-    for i in tqdm(glob.glob(f"{Path(input_dir)}/*.csv")):
+    for i in tqdm(glob.glob(f"{Path(input_dir)}/*.csv"), ncols=100):
         boards = pd.read_csv(i, header=None)
         result_move_uci: List = []
         result_move_alg: List = []
         result_score: List = []
-        for j in tqdm(boards[0]):
+        for j in tqdm(boards[0], ncols=100):
             try:
                 j = chess.Board(j)
             except Exception as e:
@@ -452,7 +499,7 @@ if __name__ == "__main__":
 
     doc_string = '''
     Usage:
-        step_04_play.py play [--player1_name=NAME] [--player2_name=NAME] --game_type=TYPE [--model_weights_file=PATH] [--analyze_game] [--clear_screen] [--delay=SECONDS]
+        step_04_play.py play [--player1_name=NAME] [--player2_name=NAME] --game_type=TYPE [--model_weights_file=PATH [--model_weights_file2=PATH]] [--analyze_game] [--clear_screen] [--delay=SECONDS]
         step_04_play.py predict_move --input_dir=PATH [--output_dir=PATH] --move_dir=PATH --model_weights_file=PATH
         step_04_play.py iterate_moves --moves=MOVESLIST [--analyze_game] [--clear_screen] [--delay=SECONDS]
         step_04_play.py (-h | --help)
@@ -462,7 +509,8 @@ if __name__ == "__main__":
         --player1_name=NAME     Player 1 name [default: Player1]
         --player2_name=NAME     Player 2 name [default: Player2]
         --game_type=TYPE        Type of the game to be played (TYPE can be: mm, me, em, ee, hm, mh, he, eh, hh)
-        --model_weights_file=PATH  Path to the neural network model, required if --game_type is either mm, me or em
+        --model_weights_file=PATH   Path to the neural network model, required if --game_type is either mm, me or em
+        --model_weights_file2=PATH  Path to the neural network model, required if --game_type is mm only
         --analyze_game          Whether to use stockfish to analyze the game or not ?
         --clear_screen          Whether to clear the terminal output after each move or not ?
         --delay=SECONDS         Number of seconds the game should pause after each move [default: 0.0]
@@ -497,6 +545,7 @@ if __name__ == "__main__":
             arguments['--player2_name'],
             arguments['--game_type'],
             arguments['--model_weights_file'],
+            arguments['--model_weights_file2'],
             arguments['--analyze_game'],
             arguments['--clear_screen'],
             float(arguments['--delay']),

@@ -4,14 +4,15 @@
 import glob
 import joblib
 import numpy as np
-import tqdm
+from tqdm.autonotebook import tqdm
 import time
+import gc
 
 all_files_list = glob.glob("../../Chess-Force-CNN-Dataset/04_pkl_data/*.pkl")
 resa, resb = joblib.load(all_files_list[0])
 
 cnt = 1
-for i in tqdm.tqdm(all_files_list[1:]):
+for i in tqdm(all_files_list[1:], ncols=100):
     cnt += 1
     atemp, btemp = joblib.load(i)
     print(str(cnt) + f" --- {atemp.shape} --- {btemp.shape}")

@@ -6,6 +6,7 @@ import multiprocessing
 import os
 import shutil
 import sys
+import time
 from pathlib import Path
 from typing import Union, Iterable, List, TextIO, Tuple
 
@@ -129,12 +130,13 @@ class FenToPkl:
     @staticmethod
     def convert_fen_to_pkl_file(file_path: str, output_dir: str, move_dir: str,
                                 board_encoder_str, score_normalizer_str,
-                                suffix_to_append: str = "-be?????-sn???.pkl", ):
+                                suffix_to_append: str = "-be?????-sn???.pkl",
+                                print_execution_time: bool = False):
         suffix_to_append = FenToPkl.get_suffix_to_append(board_encoder_str, score_normalizer_str)
         data_x_encoded, data_y_normalized = FenToPkl.__load_transform(board_encoder_str,
                                                                       score_normalizer_str,
                                                                       file_path,
-                                                                      print_execution_time=True)
+                                                                      print_execution_time=print_execution_time)
 
         # Path(...).stem returns file name only without extension
         # compress=1, performs basic compression. compress=0 means no compression
@@ -147,7 +149,8 @@ class FenToPkl:
     @staticmethod
     def convert_fen_to_pkl_folder(input_dir: str, output_dir: str, move_dir: str,
                                   board_encoder, score_normalizer,
-                                  suffix_to_append: str = "-be?????-sn???.pkl"):
+                                  suffix_to_append: str = "-be?????-sn???.pkl",
+                                  print_execution_time: bool = False):
         """
         Example:
             >>> FenToPkl.convert_fen_to_pkl_folder(
@@ -173,11 +176,78 @@ class FenToPkl:
         if not Path(move_dir).exists():
             raise FileNotFoundError(f"Move path does not exists: '{move_dir}'")
 
-        with tqdm(sorted(glob.glob(f"{Path(input_dir)}/*.csv"))) as t:
+        with tqdm(sorted(glob.glob(f"{Path(input_dir)}/*.csv")), ncols=100) as t:
             for ith_file in t:
-                t.set_description(f"File: {Path(ith_file).name}")
-                FenToPkl.convert_fen_to_pkl_file(ith_file, output_dir, move_dir, board_encoder, score_normalizer, suffix_to_append)
+                t.set_description(f"File: {Path(ith_file).name[:25].ljust(25)}")
+                FenToPkl.convert_fen_to_pkl_file(ith_file, output_dir, move_dir, board_encoder, score_normalizer, suffix_to_append, print_execution_time)
 
+
+########################################################################################################################
+
+def combine_pkl_files(input_dir: str, output_file: str):
+    import gc
+
+    all_files_list = glob.glob(str(Path(input_dir) / "*.pkl"))
+    resa, resb = joblib.load(all_files_list[0])
+
+    cnt = 0
+    print(f"pkl count = {len(all_files_list)}")
+    for i in tqdm(all_files_list, ncols=100):
+        cnt += 1
+        atemp, btemp = joblib.load(i)
+        print("    " + str(cnt) + f" --- {atemp.shape} --- {btemp.shape}")
+        resa = np.vstack((resa, atemp))  # this is 2-D
+        resb = np.hstack((resb, btemp))  # this is 1-D
+        del atemp, btemp
+        gc.collect()  # Necessary as data is too large. So, RAM get consumed completely
+        time.sleep(5)
+
+    # REFER: https://stackoverflow.com/questions/35490148/how-to-get-folder-name-in-which-given-file-resides-from-pathlib-path
+    parent_folder = Path(output_file).absolute().parents[0]
+    file_name = Path(output_file).name
+    if not parent_folder.exists():
+        os.makedirs(str(parent_folder))
+
+    if (not parent_folder.exists()) or (not os.access(str(parent_folder), os.W_OK)):
+        print(f"Unable to create or write to folder: \"{str(parent_folder)}\"")
+        print(f"You have 3 attempts to select a custom folder, otherwise the output will be saved in the current working directory")
+        for i in range(3):
+            parent_folder = Path(input("Enter new folder location: "))
+            try:
+                os.makedirs(parent_folder, exist_ok=True)
+                if parent_folder.exists() and os.access(str(parent_folder), os.W_OK):
+                    break
+                else:
+                    if not parent_folder.exists():
+                        print("    Folder does not exists and unable to create one\n")
+                    else:
+                        print("    Write access denied\n")
+            except:
+                pass
+
+    print()
+    if parent_folder.exists() and os.access(str(parent_folder), os.W_OK):
+        print("Output directory test result = Success, folder exists and is writable")
+    else:
+        print("3 attempts over")
+        print("Using current working directory to save the file")
+        parent_folder = Path(".")
+
+    try:
+        joblib.dump((resa, resb), filename=str(parent_folder / file_name), compress=1)
+    except Exception as e:
+        print(f"ERROR: {type(e)}: {e}")
+        # REFER: https://www.programiz.com/python-programming/datetime/current-datetime
+        from datetime import datetime
+        time_now = datetime.now().strftime("__%d_%m_%Y__%H_%M_%S")
+        file_name = 'CombinedDataset' + time_now + '.pkl'
+        print(f"Trying to save to current folder with name = {file_name}")
+        try:
+            joblib.dump((resa, resb), filename=file_name, compress=1)
+        except Exception as e2:
+            print(f"ERROR: {type(e2)}: {e2}")
+            return
+    print("Done :)")
 
 ########################################################################################################################
 
@@ -187,15 +257,19 @@ if __name__ == "__main__":
     doc_string = \
         """
         Usage: 
-            step_02_preprocess.py convert_fen_to_pkl_file --file_path=PATH --output_dir=PATH --move_dir=PATH --board_encoder=ENCODER_NAME --score_normalizer=METHOD_NAME
-            step_02_preprocess.py convert_fen_to_pkl_folder --input_dir=PATH --output_dir=PATH --move_dir=PATH --board_encoder=ENCODER_NAME --score_normalizer=METHOD_NAME
-            step_02_preprocess.py get_options --parameter=[BoardEncoder | ScoreNormalizer]
+            step_02_preprocess.py get_options [--parameter=[BoardEncoder | ScoreNormalizer]]
+            step_02_preprocess.py convert_fen_to_pkl_file --file_path=PATH --output_dir=PATH --move_dir=PATH --board_encoder=ENCODER_NAME [--score_normalizer=METHOD_NAME] [--execution_time]
+            step_02_preprocess.py convert_fen_to_pkl_folder --input_dir=PATH --output_dir=PATH --move_dir=PATH --board_encoder=ENCODER_NAME [--score_normalizer=METHOD_NAME] [--execution_time]
+            step_02_preprocess.py combine_pkls --input_dir=PATH --output_file=PATH
             step_02_preprocess.py (-h | --help)
             step_02_preprocess.py --version
 
         Options:
             -h --help    show this
+            --execution_time        Print time taken to convert one file after each iteration
+            --output_file=PATH      Name of the file with its path where it is to be saved
         """
+
     arguments = docopt(doc_string, argv=None, help=True, version=f"{cs.VERSION} - Preprocess", options_first=False)
     print(arguments, end="\n\n----------------------------------------\n\n")
 
@@ -208,6 +282,7 @@ if __name__ == "__main__":
             arguments['--move_dir'],
             BoardEncoder.get_uniqstr_to_classobj(arguments['--board_encoder']),  # ("BoardEncoder." + str(arguments['--board_encoder'])),
             ScoreNormalizer.num_to_method(int(arguments['--score_normalizer'])),
+            arguments['--execution_time']
             # f"ScoreNormalizer.{arguments['--score_normalizer']:0>3}",  # NOTE: 0>3 ensure number if prefixed with zero's if required
         )
     elif arguments['convert_fen_to_pkl_folder']:
@@ -218,30 +293,40 @@ if __name__ == "__main__":
             arguments['--output_dir'],
             arguments['--move_dir'],
             BoardEncoder.get_uniqstr_to_classobj(arguments['--board_encoder']),
-            ScoreNormalizer.num_to_method(int(arguments['--score_normalizer'])),
+            ScoreNormalizer.str_to_method(str(arguments['--score_normalizer'])),
+            arguments['--execution_time']
         )
+    elif arguments['combine_pkls']:
+        combine_pkl_files(arguments['--input_dir'], arguments['--output_file'])
     elif arguments['get_options']:
-        import pprint
-
         class_to_prefix = {'BoardEncoder': 'Encode_', 'ScoreNormalizer': 'normalize_'}
-        custom_obj_str = cs.get_class_common_prefixed(
-            eval(arguments['--parameter']),
-            prefix_to_search=(class_to_prefix[arguments['--parameter']] if arguments['--parameter'] in class_to_prefix else None)
-        )
+        to_print_both = True if arguments['--parameter'] is None else False
+
+        def get_custom_obj_str():
+            return cs.get_class_common_prefixed(
+                eval(arguments['--parameter']),
+                prefix_to_search=(class_to_prefix[arguments['--parameter']] if arguments['--parameter'] in class_to_prefix else None)
+            )
+
+        if to_print_both:
+            arguments['--parameter'] = 'BoardEncoder'
         if arguments['--parameter'] == 'BoardEncoder':
             custom_obj_str = [
                 eval(f"BoardEncoder.{i}").UNIQ_NAME_5
-                for i in custom_obj_str
+                for i in get_custom_obj_str()
             ]
-        elif arguments['--parameter'] == 'ScoreNormalizer':
+            print(f"BoardEncoder = {custom_obj_str}")
+            pass
+        
+        if to_print_both:
+            arguments['--parameter'] = 'ScoreNormalizer'
+        if arguments['--parameter'] == 'ScoreNormalizer':
             custom_obj_str = [
                 ScoreNormalizer.get_suffix_str(i)
-                for i in custom_obj_str
+                for i in get_custom_obj_str()
             ]
+            print(f"ScoreNormalizer = {custom_obj_str}")
             pass
-        else:
-            exit(0)
-        pprint.pprint(custom_obj_str)
     else:
         print("ERROR: invalid command line arguments")
     pass

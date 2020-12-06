@@ -305,6 +305,25 @@ class KerasModels:
 
         return model
 
+    @staticmethod
+    def model_007(input_dim) -> keras.Sequential:
+        # Custom
+        model: keras.Sequential = keras.Sequential()
+        model.add(keras.layers.Conv2D(128, kernel_size=1, activation='relu', input_shape=input_dim))
+        model.add(keras.layers.Conv2D(128, kernel_size=(4, 4), padding='same', activation='relu'))
+        model.add(keras.layers.Conv2D(128, kernel_size=(4, 4), padding='same', activation='relu'))
+        model.add(keras.layers.Conv2D(128, kernel_size=1, activation='relu'))
+        model.add(keras.layers.Conv2D(512, kernel_size=1, activation='relu'))
+        model.add(keras.layers.Flatten())
+        model.add(keras.layers.Dense(512, activation='relu'))
+        model.add(keras.layers.Dense(4, activation='softmax'))
+
+        model.compile(loss="categorical_crossentropy",
+                      optimizer="adam",
+                      metrics=['accuracy'])
+
+        return model
+
 
 class NNBuilder:
     @staticmethod

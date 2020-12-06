@@ -48,7 +48,40 @@ class ScoreNormalizer:
         # return keras.utils.to_categorical(data_np, 2)
 
     @staticmethod
+    def normalize_006(data_np: np.ndarray) -> np.ndarray:
+        data_np_new: np.ndarray = copy.deepcopy(data_np)
+        data_np_new[data_np < -1] = -2.0
+        data_np_new[np.logical_and(-1 <= data_np, data_np < 0)] = -1.0
+        data_np_new[np.logical_and(0 <= data_np, data_np <= 1)] = 1.0
+        data_np_new[1 < data_np] = 2.0
+
+        np_category = np.zeros((data_np_new.shape[0], 4))
+        np_category[(data_np_new == -2).ravel(), 0] = 1
+        np_category[(data_np_new == -1).ravel(), 1] = 1
+        np_category[(data_np_new ==  1).ravel(), 2] = 1
+        np_category[(data_np_new ==  2).ravel(), 3] = 1
+        
+        return np_category
+
+    @staticmethod
+    def normalize_007(data_np: np.ndarray) -> np.ndarray:
+        data_np_new: np.ndarray = copy.deepcopy(data_np)
+        data_np_new[data_np < -0.0001] = -2.0
+        data_np_new[np.logical_and(-0.0001 <= data_np, data_np < 0)] = -1.0
+        data_np_new[np.logical_and(0 <= data_np, data_np <= 0.0001)] = 1.0
+        data_np_new[0.0001 < data_np] = 2.0
+
+        np_category = np.zeros((data_np_new.shape[0], 4))
+        np_category[(data_np_new == -2.0).ravel(), 0] = 1
+        np_category[(data_np_new == -1.0).ravel(), 1] = 1
+        np_category[(data_np_new ==  1.0).ravel(), 2] = 1
+        np_category[(data_np_new ==  2.0).ravel(), 3] = 1
+        
+        return np_category
+
+    @staticmethod
     def str_to_method(n_str):
+        n_str = n_str.strip()[-3:].zfill(3)  # This ensures only last 3 letters are used
         for i in cs.get_class_common_prefixed(ScoreNormalizer, prefix_to_search="normalize_"):
             if n_str == ScoreNormalizer.get_suffix_str(i):
                 return eval("ScoreNormalizer." + i)
