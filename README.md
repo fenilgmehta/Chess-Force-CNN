@@ -76,11 +76,11 @@ CNN Model based Chess AI
        && mv "${PKL_PATH_TRAINED}/"*.pkl "${PKL_PATH_COMBINED}"
    ```
 6. Play the game
-```sh
-python step_04_play.py play \
-    --game_type=mm                                                                                  \
-    --model_weights_file='../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00012-weight-v001.h5'  \
-    --model_weights_file2='../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5' \
-    --analyze_game                                                                                  \
-    --delay=0
-```
+   ```sh
+   python step_04_play.py play \
+       --game_type=mm                                                                                  \
+       --model_weights_file='../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00012-weight-v001.h5'  \
+       --model_weights_file2='../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5' \
+       --analyze_game                                                                                  \
+       --delay=0
+   ```
