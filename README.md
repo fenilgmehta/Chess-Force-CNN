@@ -3,9 +3,15 @@ CNN Model based Chess AI
 
 
 ## References
-1. https://github.com/fenilgmehta/Chess-Force
-2. https://github.com/fenilgmehta/Chess-Force-Data-Set
-3. https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt
+1. [Project Report](./CS725%20-%20Chess%20AI%20using%20CNN%20-%20Report.pdf)
+2. https://github.com/fenilgmehta/Chess-Force-CNN-Dataset
+3. https://github.com/fenilgmehta/Chess-Force-CNN-Models
+    * 03 Nov 14:52 👉 [cnn-mg006-be01588-sn005-ep00024-weight-v001.h5](https://github.com/fenilgmehta/Chess-Force-CNN-Models/blob/main/cnn-mg006-be01588-sn005-ep00024-weight-v001.h5)
+    * 28 Nov 09:35 👉 [cnn-mg007-be01588-sn006-ep00009-weight-v001.h5](https://github.com/fenilgmehta/Chess-Force-CNN-Models/blob/main/cnn-mg007-be01588-sn006-ep00009-weight-v001.h5)
+    * 28 Nov 18:40 👉 [cnn-mg007-be01588-sn007-ep00012-weight-v001.h5](https://github.com/fenilgmehta/Chess-Force-CNN-Models/blob/main/cnn-mg007-be01588-sn007-ep00012-weight-v001.h5)
+4. https://github.com/fenilgmehta/Chess-Force
+5. https://github.com/fenilgmehta/Chess-Force-Data-Set
+6. https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt
 
 
 ## Usage
@@ -50,13 +56,13 @@ CNN Model based Chess AI
 
 5. Create a model in [step_03a_ffnn.py](./code/step_03a_ffnn.py) inside `class KerasModels` or reuse the existing models
    ```sh
-   WEIGHTS_SAVE_PATH="../../Chess-Force-Models"
+   WEIGHTS_SAVE_PATH="../../Chess-Force-CNN-Models"
    
    MODEL_NAME_PREFIX="cnn"  # Change this prefix based on the model being used
    EPOCHS=4  # Can update this anytime before execution
    
    # Update this whenever required
-   SAVED_WEIGHTS_FILE="../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001.h5"
+   SAVED_WEIGHTS_FILE="../../Chess-Force-CNN-Models/cnn-mg007-be01588-sn000-ep00008-weight-v001.h5"
    
    python step_03b_train.py --help              # Will print help message
    python step_03b_train.py get_available_gpus  # Will print available GPU's
@@ -87,18 +93,11 @@ CNN Model based Chess AI
 6. Play the game
    ```sh
    python step_04_play.py play \
-       --game_type=mm                                                                                  \
-       --model_weights_file='../../Chess-Force-Models/cnn-mg007-be01588-sn000-ep00012-weight-v001.h5'  \
-       --model_weights_file2='../../Chess-Force-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5' \
-       --analyze_game                                                                                  \
+       --game_type=mm                                                                                      \
+       --model_weights_file='../../Chess-Force-CNN-Models/cnn-mg007-be01588-sn000-ep00012-weight-v001.h5'  \
+       --model_weights_file2='../../Chess-Force-CNN-Models/cnn-mg006-be01588-sn000-ep00024-weight-v001.h5' \
+       --analyze_game                                                                                      \
        --delay=0
    ```
 
-<!--
 
-### Model Trained Weights:
-*  3 Nov 2:52 PM 👉 cnn-mg006-be01588-sn005-ep00024-weight-v001.h5
-* 28 Nov 9:35 AM 👉 cnn-mg007-be01588-sn006-ep00009-weight-v001.h5
-* 28 Nov 6:40 PM 👉 cnn-mg007-be01588-sn007-ep00012-weight-v001.h5
-
--->
