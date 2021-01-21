@@ -1,5 +1,12 @@
 # Chess-Force-CNN
-CNN Model based Chess AI
+
+- **Subject** - Foundations of Machine Learning (CS 725)
+- **Project** - CNN Model based Chess AI
+- **Team Members**
+    - 203050054 - Fenil Mehta
+    - 203050003 - Aditya Jain
+    - 203050115 - Amit Hari
+    - 203050120 - Munna Kumar Paswan
 
 
 ## References
