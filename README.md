@@ -1,13 +1,18 @@
 # Chess-Force-CNN
 CNN Model based Chess AI
 
+
 ## References
 1. https://github.com/fenilgmehta/Chess-Force
 2. https://github.com/fenilgmehta/Chess-Force-Data-Set
 3. https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt
 
+
 ## Usage
+
 1. Download the dataset from [Chess-Force-Data-Set](https://github.com/fenilgmehta/Chess-Force-Data-Set)
+    - Total board states = 29037071
+
 2. Initialize shell variables
    ```sh
    DATA_PATH='../../Chess-Force-CNN-Dataset'            # EDIT this so that it points to the directory used for storing all the CSV data files used for training/testing/playing
@@ -17,6 +22,7 @@ CNN Model based Chess AI
    PKL_PATH_COMBINED="${DATA_PATH}/04_pkl_data_combined"
    PKL_PATH_TRAINED="${DATA_PATH}/04_pkl_data_trained"
    ```
+
 3. Write your own Board Encoder in [step_02_BoardEncoder.py](./code/step_02_BoardEncoder.py) and Score Normalizer in [step_02_ScoreNormalizer.py](./code/step_02_ScoreNormalizer.py) or reuse the existing ones
    ```sh
    python step_02_preprocess.py --help       # To see how to use the preprocessing module
@@ -34,12 +40,14 @@ CNN Model based Chess AI
        --board_encoder=01588                                 \
        --score_normalizer=000
    ```
+
 4. Optionally combine the PKL files to make sure whole dataset is used for training instead of having the model the get biased by a part of the dataset
    ```sh
    python step_02_preprocess.py combine_pkls \
        --input_dir="$PKL_PATH"               \
        --output_file="${PKL_PATH_COMBINED}/all_combined.pkl"
    ```
+
 5. Create a model in [step_03a_ffnn.py](./code/step_03a_ffnn.py) inside `class KerasModels` or reuse the existing models
    ```sh
    WEIGHTS_SAVE_PATH="../../Chess-Force-Models"
@@ -75,6 +83,7 @@ CNN Model based Chess AI
        --weights_save_path="${WEIGHTS_SAVE_PATH}"          \
        && mv "${PKL_PATH_TRAINED}/"*.pkl "${PKL_PATH_COMBINED}"
    ```
+
 6. Play the game
    ```sh
    python step_04_play.py play \
@@ -84,3 +93,12 @@ CNN Model based Chess AI
        --analyze_game                                                                                  \
        --delay=0
    ```
+
+<!--
+
+### Model Trained Weights:
+*  3 Nov 2:52 PM 👉 cnn-mg006-be01588-sn005-ep00024-weight-v001.h5
+* 28 Nov 9:35 AM 👉 cnn-mg007-be01588-sn006-ep00009-weight-v001.h5
+* 28 Nov 6:40 PM 👉 cnn-mg007-be01588-sn007-ep00012-weight-v001.h5
+
+-->
